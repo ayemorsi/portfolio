@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+  <link rel="stylesheet" href="style.css">
+
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <main class="desktop">
+
+    <!-- Menu in the bottom woth the time and tabs -->
+    <div class="menu-starter">
+      <button class="start-button" id="settings-button">start</button>
+      <div class="time">12:05 PM</div>
+    </div>
+
+    <div id="settings">
+      <aside class="profile-card">
+        <div class="side-bar">
+          <div class="name">
+            <span class="first_name">Anas<span class="last_name">morsi</span></span>
+          </div>
+        </div>
+
+        <ul>
+          <li>
+            <button onclick="createWindowAndShowOnDesktop({
+                id: 'myWork',
+                title: 'My Work',
+                content: `
+                <div class='work-container' id='work-container'>
+                  <a class='worktext' href='#'>
+                    <img class='work' src='media/amazon logo.png' alt='Amazon'>
+                    <p class='worktext'>Amazon</p>
+                  </a>
+                </div>
+
+                <div class='work-container'>
+                  <a class='worktext' href='https://fcawitech.com'>
+                    <img class='work' src='media/fcalogo.jpeg' alt='FCA'>
+                    <p class='worktext'>FCA</p>
+                  </a>
+                </div>
+
+                <div class='work-container'
+                  <a class='worktext' href='#'>
+                    <img class='work' src='media/pngaaa.com-4173356.png' alt='DoS'>
+                    <p class='worktext'>Deloitte</p>
+                  </a>
+                </div>
+                `,
+                windowStatus: '3 items',
+                windowStyle: {
+              		width: 550,
+              		height: 262,
+                  left: 495,
+              		top: 327,
+              		display: 'block',
+              		position: 'fixed',
+                }
+            }); closeStart();"
+            class="start-menu-options showHideWork settings-button" id="showHideWork">
+              <first-letter>Work</first-letter>
+            </button>
+          </li>
+          <li>
+            <button onclick="createWindowAndShowOnDesktop({
+              id: 'resume',
+              title: 'My Resume',
+              content: `<iframe src='media/anasmorsi_resume_2021.pdf' style='width:100%'></iframe>`,
+              windowStatus: 'Updated resume',
+              windowStyle: {
+                width: 550,
+            		height: 262,
+            		left: 489,
+            		top: 23,
+            		display: 'block',
+            		position: 'fixed'
+              }
+            }); closeStart();"
+            class="start-menu-options resume-page settings-button" id="resume-page1">
+              Resume
+            </button>
+          </li>
+          <li>
+            <button onclick="createWindowAndShowOnDesktop({
+              id: 'readmedoc',
+              title: 'Readme',
+              content: `
+            	<div class='readme'>
+            		<h3>Welcome to my portfolio</h3>
+            		<div class='readme-text'>
+            			<p style='font-size:12px'>
+            				I'm a UX designer. My current portfolio is a Windows95
+            				operating system theme. I chose this OS because it was one of the first OS I operated on.
+            				At the same time, I was clicking through the Windows95 emulator, appreciating the
+            				easy/simple usability it had. It is still a work in progress; I will be updating it
+            				with new features.
+            			</p>
+            			<h5 style='margin-bottom:0'>Existing Features:</h5>
+            			<p style='font-size:12px'>
+            				Resizing windows (bottom right corner) <br>
+            				Dragging windows <br>
+                    Responsive windows tab when closing out <br>
+            				Closing/opening out of windows
+            			</p>
+
+            			<h5 style='margin-bottom:0'>Future features:</h5>
+            			<p style='font-size:12px'>
+            				Creating a Windows95 mobile theme <br>
+            				Maximizing windows <br>
+            				Creating a WebGL classic game <br>
+            				Adding a feedback input field
+            			</p>
+
+            	</div>
+            	`,
+              windowStatus: 'Readme',
+              windowStyle: {
+            		width: 390,
+            		height: 502,
+            		left: 10,
+            		top: 4,
+            		display: 'block',
+            		position: 'fixed'
+              }
+            }); closeStart();"
+              class="start-menu-options resume-page settings-button" id="resume-page1">
+              Readme
+            </button>
+          </li>
+
+          <li>
+            <button class="start-menu-options slide-toggle" id="settings-button1">
+              <div class="arrow">
+                <first-letter>Contact Me!</first-letter>
+              </div>
+            </button>
+
+            <div id="settings1">
+              <ul class="contact-me">
+                <li>
+                  <button class="email">
+                    <first-letter><u>a</u>anasmorsi@gmail.com</first-letter>
+                  </button>
+                </li>
+                <li>
+                  <button class="email">
+                    <first-letter><u>L</u>inkedIn</first-letter>
+                  </button>
+                </li>
+                <li>
+                  <button class="email">
+                    <first-letter><u>I</u>nstagram</first-letter>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="taskbar">
+      <section class="tasks has-grip">
+
+      </section>
+    </div>
+
+
+    <!-- <section class="app" id="app1" style="width: 390px; height: 502px; left: 10px; top: 4px;">
+      <header class="titlebar">
+        <div class="title">
+          <div class="pull-right close" id="minimize">
+            <button class="minimize"><span class="fa fa-minus"></span></button>
+            <button class="expand"><span class="fa fa-square-o"></span></button>
+            <button class="times"><span class="fa fa-times"></span></button>
+          </div>
+          <h1>
+            <div class="icon-my-computer">Readme</div>
+          </h1>
+        </div>
+        <ul class="toolbar">
+          <li><u>F</u>ile</li>
+          <li><u>E</u>dit</li>
+          <li><u>V</u>iew</li>
+          <li><u>H</u>elp</li>
+        </ul>
+      </header>
+      <nav class="toolbars-container">
+        <div class="toolbar menubar has-grip">
+          <div class="statusbar">
+            <div class="left">Readme</div>
+          </div>
+        </div>
+      </nav>
+      <div class="readme">
+        <h3>Welcome to my portfolio</h3>
+        <div="readme-text">
+          <p style="font-size:12px">
+            I'm a UX designer. My current portfolio is a Windows95
+            operating system theme. I chose this OS because it was one of the first OS I operated on.
+            At the same time, I was clicking through the Windows95 emulator, appreciating the
+            easy/simple usability it had. It is still a work in progress; I will be updating it
+            with new features.
+          </p>
+          <h5 style="margin-bottom:0">Existing Features:</h5>
+          <p style="font-size:12px">
+            Resizing windows (bottom right corner) <br>
+            Dragging windows <br>
+            Closing/opening out of windows
+          </p>
+
+          <h5 style="margin-bottom:0">Future features:</h5>
+          <p style="font-size:12px">
+            Creating a Windows95 mobile theme <br>
+            Maximizing windows <br>
+            Responsive windows tab when closing out <br>
+            Creating a WebGL classic game <br>
+            Adding a feedback input field
+          </p>
+
+      </div>
+      </div>
+    </section>   -->
+  </main>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+
+<script src="js.js"></script>
+
+</html>
