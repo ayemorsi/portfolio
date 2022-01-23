@@ -26,7 +26,7 @@ $(function() {
 
 });
 
-function createWindow({id, content, title, windowStatus, onWindowClose, style = {}}) {
+function createWindow({id, content, title, windowStatus, onWindowClose, onWindowExpand, style = {}}) {
   const _style = {
       width: 550,
       height: 262,
@@ -54,9 +54,9 @@ function createWindow({id, content, title, windowStatus, onWindowClose, style = 
   $section.html(`
   <header class="titlebar">
   <div class="title">
-    <div class="pull-right close" >
+    <div class="pull-right close expand" >
       <button class="minimize" id="minimize1"><span class="fa fa-minus"></span></button>
-      <button class="expand"><span class="fa fa-square-o"></span></button>
+      <button class="square" id="square1"><span class="fa fa-square-o"></span></button>
       <button class="times" id="times1"><span class="fa fa-times"></span></button>
     </div>
     <h1>
@@ -79,8 +79,20 @@ function createWindow({id, content, title, windowStatus, onWindowClose, style = 
 </nav>
 <div class="window-content">${content}</div>
 `);
+
 const $close = $('.close button.times', $section);
 $close.click(onWindowClose);
+
+// const $expand = $('.expand button.square', $section);
+// $expand.click(onWindowExpand);
+
+
+const $expand = $('.expand button.square', $section);
+$expand.click(function (e) {
+  e.preventDefault();
+  $($section).toggleClass('fullscreen');
+});
+
 const $minimize = $('.close button.minimize', $section);
 $minimize.click(function (e) {
   e.preventDefault();
@@ -142,6 +154,11 @@ function createWindowAndShowOnDesktop({
       e.preventDefault();
       $($window).remove();
       $($startButton).remove();
+    },
+    onWindowExpand: function(e) {
+      e.preventDefault();
+      $($window).remove();
+      $($startButton).remove();
     }
   });
 
@@ -198,7 +215,6 @@ createWindowAndShowOnDesktop({
   }
 });
 
-
 createWindowAndShowOnDesktop({
   id: 'readmedoc',
   title: 'Readme',
@@ -224,7 +240,7 @@ createWindowAndShowOnDesktop({
 			<h5 style="margin-bottom:0">Future features:</h5>
 			<p style="font-size:12px">
 				Creating a Windows95 mobile theme <br>
-				Maximizing windows <br>
+				<strike>Maximizing windows</strike> <br>
 				Creating a WebGL classic game <br>
 				Adding a feedback input field
 			</p>

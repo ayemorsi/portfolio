@@ -160,7 +160,7 @@ iframe {
   right: 34px;
 }
 
-.title button.expand {
+.title button.square {
   right: 18px;
 }
 
@@ -399,3 +399,14 @@ ul, li {
 #work {
   display: none;
 }
+
+
+
+.fullscreen{
+    z-index: 9999;
+    width: 100% !important;
+    height: 94.2% !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+ }
