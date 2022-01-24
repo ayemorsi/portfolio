@@ -209,7 +209,7 @@ createWindowAndShowOnDesktop({
 		width: 550,
 		height: 262,
     left: 495,
-		top: 327,
+		top: 310,
 		display: 'block',
 		position: 'fixed',
   }
