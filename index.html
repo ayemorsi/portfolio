@@ -11,9 +11,7 @@
 </head>
 
 <body>
-
   <main class="desktop">
-
     <!-- Menu in the bottom woth the time and tabs -->
     <div class="menu-starter">
       <button class="start-button" id="settings-button">
@@ -32,6 +30,61 @@
         </div>
 
         <ul>
+          <li>
+            <button class="start-menu-options slide-toggle" id="settings-button1">
+              <div class="arrow">
+                <first-letter>Contact Me!</first-letter>
+              </div>
+            </button>
+
+            <div id="settings1">
+              <ul class="contact-me">
+                <li>
+                  <button class="email">
+                    <a href='mailto: anasmorsi@gmail.com'>
+                      <first-letter><u>a</u>nasmorsi@gmail.com</first-letter>
+                    </a>
+                  </button>
+                </li>
+                <li>
+                  <button class="email">
+                    <a href='https://www.linkedin.com/in/anas-morsi/'>
+                      <first-letter><u>L</u>inkedIn</first-letter>
+                    </a>
+                  </button>
+                </li>
+                <li>
+                  <button class="email">
+                    <a href='https://www.instagram.com/ayemorsi/'>
+                      <first-letter><u>I</u>nstagram</first-letter>
+                    </a>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+          <li>
+            <button onclick="createWindowAndShowOnDesktop({
+              id: 'zc1',
+              title: 'My zc',
+              content: `<iframe src='/Users/anasmorsi/Desktop/zc.pdf' style='width:100%'></iframe>`,
+              windowStatus: 'Updated resume',
+              windowStyle: {
+                width: 550,
+                height: 262,
+                left: 489,
+                top: 23,
+                display: 'block',
+                position: 'fixed'
+              }
+            }); closeStart();"
+              class="start-menu-options settings-button">
+              zc
+            </button>
+          </li>
+
+
           <li>
             <button onclick="createWindowAndShowOnDesktop({
                 id: 'myWork',
@@ -57,6 +110,18 @@
                     <p class='worktext'>Deloitte</p>
                   </a>
                 </div>
+
+                <div class='work-container'>
+            			<img class='work' src='media/ZoomScriptslogo.png' alt='ZoomScript'>
+            			<p class='worktext'>ZoomScript</p>
+              	</div>
+
+                <div class='work-container'>
+              		<a class='worktext' href='https://fcawitech.com'>
+              			<img class='work' src='media/fcalogo.jpeg' alt='FCA'>
+              			<p class='worktext'>MHS</p>
+              		</a>
+              	</div>
                 `,
                 windowStatus: '3 items',
                 windowStyle: {
@@ -68,7 +133,7 @@
               		position: 'fixed',
                 }
             }); closeStart();"
-            class="start-menu-options showHideWork settings-button" id="showHideWork">
+              class="start-menu-options showHideWork settings-button" id="showHideWork">
               <first-letter>Work</first-letter>
             </button>
           </li>
@@ -87,7 +152,7 @@
             		position: 'fixed'
               }
             }); closeStart();"
-            class="start-menu-options resume-page settings-button" id="resume-page1">
+              class="start-menu-options resume-page settings-button" id="resume-page1">
               Resume
             </button>
           </li>
@@ -139,51 +204,19 @@
             </button>
           </li>
 
-          <li>
-            <button class="start-menu-options slide-toggle" id="settings-button1">
-              <div class="arrow">
-                <first-letter>Contact Me!</first-letter>
-              </div>
-            </button>
 
-            <div id="settings1">
-              <ul class="contact-me">
-                <li>
-                  <button class="email">
-                    <a href='mailto: anasmorsi@gmail.com'>
-                      <first-letter><u>a</u>nasmorsi@gmail.com</first-letter>
-                    </a>
-                  </button>
-                </li>
-                <li>
-                  <button class="email">
-                    <a href='https://www.linkedin.com/in/anas-morsi/'>
-                      <first-letter><u>L</u>inkedIn</first-letter>
-                    </a>
-                  </button>
-                </li>
-                <li>
-                  <button class="email">
-                    <a href='https://www.instagram.com/ayemorsi/'>
-                      <first-letter><u>I</u>nstagram</first-letter>
-                    </a>
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </li>
+
+
+
+
+
         </ul>
       </aside>
     </div>
 
     <div class="taskbar">
-      <section class="tasks has-grip">
-
-      </section>
+      <section class="tasks has-grip"></section>
     </div>
-
-
-
   </main>
 
 

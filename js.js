@@ -2,9 +2,9 @@ $(function() {
   var elem = $("#settings");
 
   $(document).on("click", function(e) {
-      if(!$(e.target).hasClass('start-button')) {
-        elem.slideUp();
-      }
+    if (!$(e.target).hasClass('start-button')) {
+      elem.slideUp();
+    }
   });
 
   function openSettings() {
@@ -18,35 +18,49 @@ $(function() {
     e.stopPropagation();
   });
 
-	$(".slide-toggle").click(function() {
+  $(".slide-toggle").click(function() {
     $("#settings1").animate({
+      width: "toggle"
+    });
+  });
+
+  $(".slide-toggle1").click(function() {
+    $("#settings2").animate({
       width: "toggle"
     });
   });
 
 });
 
-function createWindow({id, content, title, windowStatus, onWindowClose, onWindowExpand, style = {}}) {
+function createWindow({
+  id,
+  content,
+  title,
+  windowStatus,
+  onWindowClose,
+  onWindowExpand,
+  style = {}
+}) {
   const _style = {
-      width: 550,
-      height: 262,
-      left: 444,
-      top: 253,
-      display: 'block',
-      ...style
+    width: 550,
+    height: 262,
+    left: 444,
+    top: 253,
+    display: 'block',
+    ...style
   }
 
   const $section = $(`<section class="app">`)
   $section.css(_style);
 
 
-	$section.click(function (){
-		const zIndex = $section.css('z-index')
-		console.log({
-			zIndex
-		})
-	  $section.css('z-index', zIndex + 1)
-	});
+  $section.click(function() {
+    const zIndex = $section.css('z-index')
+    console.log({
+      zIndex
+    })
+    $section.css('z-index', zIndex + 1)
+  });
 
 
 
@@ -80,29 +94,28 @@ function createWindow({id, content, title, windowStatus, onWindowClose, onWindow
 <div class="window-content">${content}</div>
 `);
 
-const $close = $('.close button.times', $section);
-$close.click(onWindowClose);
+  const $close = $('.close button.times', $section);
+  $close.click(onWindowClose);
 
-// const $expand = $('.expand button.square', $section);
-// $expand.click(onWindowExpand);
+  const $expand = $('.expand button.square', $section);
+  $expand.click(function(e) {
+    e.preventDefault();
+    $($section).toggleClass('fullscreen');
+  });
 
-
-const $expand = $('.expand button.square', $section);
-$expand.click(function (e) {
-  e.preventDefault();
-  $($section).toggleClass('fullscreen');
-});
-
-const $minimize = $('.close button.minimize', $section);
-$minimize.click(function (e) {
-  e.preventDefault();
-  $($section).hide();
-});
+  const $minimize = $('.close button.minimize', $section);
+  $minimize.click(function(e) {
+    e.preventDefault();
+    $($section).hide();
+  });
 
   return $section;
 }
 
-function createStartButton({id, title}) {
+function createStartButton({
+  id,
+  title
+}) {
   const $button = $('<button class="start-button-pages">');
   $button.attr('id', id);
   $button.text(title);
@@ -110,9 +123,9 @@ function createStartButton({id, title}) {
 }
 
 function attachWindowWithButton($window, $startButton) {
-  $startButton.click(function (e) {
+  $startButton.click(function(e) {
     e.preventDefault();
-    if($($window).is(':visible')) {
+    if ($($window).is(':visible')) {
       $($window).hide();
     } else {
       $($window).show();
@@ -135,15 +148,13 @@ function createWindowAndShowOnDesktop({
   windowStatus,
   windowStyle
 }) {
-  if($(`section#${id}`).length) {
+  if ($(`section#${id}`).length) {
     return;
   }
-
   const $startButton = createStartButton({
     id: id,
     title: title,
   });
-
   const $window = createWindow({
     id: id,
     title: title,
@@ -161,23 +172,22 @@ function createWindowAndShowOnDesktop({
       $($startButton).remove();
     }
   });
-
-    $($window).draggable({ handle: '.titlebar' });
-    $($window).click(function() {
-      $($window).removeClass('active');
-      $(this).addClass('active');
-    });
-
+  $($window).draggable({
+    handle: '.titlebar'
+  });
+  $($window).click(function() {
+    $($window).removeClass('active');
+    $(this).addClass('active');
+  });
   attachWindowWithButton($window, $startButton);
-
   showWindowOnDesktop($window, $startButton);
-
 }
 
 function closeStart() {
   const $elem = $("#settings");
   $elem.slideUp();
 }
+
 
 createWindowAndShowOnDesktop({
   id: 'myWork',
@@ -203,15 +213,29 @@ createWindowAndShowOnDesktop({
 			<p class='worktext'>FCA</p>
 		</a>
 	</div>
+
+  <div class='work-container'>
+		<a class='worktext' href='#'>
+			<img class='work' src='media/ZoomScriptslogo.png' alt='ZC'>
+			<p class='worktext'>ZoomScript</p>
+		</a>
+	</div>
+
+  <div class='work-container'>
+		<a class='worktext' href='#'>
+			<img class='work' src='media/fcalogo.jpeg' alt='FCA'>
+			<p class='worktext'>MHS</p>
+		</a>
+	</div>
 	`,
   windowStatus: '3 items',
   windowStyle: {
-		width: 550,
-		height: 262,
+    width: 550,
+    height: 262,
     left: 495,
-		top: 310,
-		display: 'block',
-		position: 'fixed',
+    top: 310,
+    display: 'block',
+    position: 'fixed',
   }
 });
 
@@ -249,12 +273,12 @@ createWindowAndShowOnDesktop({
 	`,
   windowStatus: 'Readme',
   windowStyle: {
-		width: 390,
-		height: 502,
-		left: 10,
-		top: 4,
-		display: 'block',
-		position: 'fixed'
+    width: 390,
+    height: 502,
+    left: 10,
+    top: 4,
+    display: 'block',
+    position: 'fixed'
   }
 });
 
@@ -264,11 +288,26 @@ createWindowAndShowOnDesktop({
   content: `<iframe src="media/anasmorsi_resume_2021.pdf" style="width:100%"></iframe>`,
   windowStatus: 'Updated resume',
   windowStyle: {
+    width: 550,
+    height: 262,
+    left: 489,
+    top: 23,
+    display: 'block',
+    position: 'fixed'
+  }
+});
+
+createWindowAndShowOnDesktop({
+  id: 'zc1',
+  title: 'ZoomScript',
+  content: `<iframe src='/Users/anasmorsi/Desktop/zc.pdf' style='width:100%'></iframe>`,
+  windowStatus: 'zc',
+  windowStyle: {
 		width: 550,
 		height: 262,
-		left: 489,
-		top: 23,
+		left: 595,
+		top: 330,
 		display: 'block',
-		position: "fixed"
+		position: 'fixed'
   }
 });
