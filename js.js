@@ -221,14 +221,9 @@ createWindowAndShowOnDesktop({
 		</a>
 	</div>
 
-  <div class='work-container'>
-		<a class='worktext' href='#'>
-			<img class='work' src='media/fcalogo.jpeg' alt='FCA'>
-			<p class='worktext'>MHS</p>
-		</a>
-	</div>
+
 	`,
-  windowStatus: '3 items',
+  windowStatus: '4 items',
   windowStyle: {
     width: 550,
     height: 262,
@@ -300,7 +295,7 @@ createWindowAndShowOnDesktop({
 createWindowAndShowOnDesktop({
   id: 'zc1',
   title: 'ZoomScript',
-  content: `<iframe src='/Users/anasmorsi/Desktop/zc.pdf' style='width:100%'></iframe>`,
+  content: `<iframe src='media/zc.pdf' style='width:100%'></iframe>`,
   windowStatus: 'zc',
   windowStyle: {
 		width: 550,
