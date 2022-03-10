@@ -233,8 +233,8 @@ function handleZCIconClick() {
     windowStyle: {
       width: 550,
       height: 262,
-      left: 489,
-      top: 23,
+      left: 357,
+      top: 219,
       display: 'block',
       position: 'fixed'
     }
@@ -255,17 +255,3 @@ function handleZCIconClick() {
 //   }
 // });
 //
-// createWindowAndShowOnDesktop({
-//   id: 'zc1',
-//   title: 'ZoomScript',
-//   content: `<iframe src='media/zc.pdf' style='width:100%'></iframe>`,
-//   windowStatus: 'zc',
-//   windowStyle: {
-// 		width: 550,
-// 		height: 262,
-// 		left: 595,
-// 		top: 330,
-// 		display: 'block',
-// 		position: 'fixed'
-//   }
-// });
