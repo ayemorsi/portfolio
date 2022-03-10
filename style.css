@@ -287,7 +287,7 @@ div#settings1 {
   border-left: inset 2px white;
   border-bottom: inset 2px black;
   border-right: inset 2px black;
-  margin-left: 84.5%;
+  margin-left: 100%;;
   float: left;
 }
 
@@ -313,6 +313,7 @@ ul .contact-me {
 .profile-card {
   width: 250px;
   height: 400px;
+  display: flex;
 }
 
 .side-bar {
@@ -345,7 +346,7 @@ ul .contact-me {
 
 .start-menu-options {
   background: #C0C0C0;
-  bottom: 417px;
+  /* bottom: 417px; */
   position: relative;
   border: none;
   font-weight: 100;
@@ -426,7 +427,7 @@ ul, li {
  }
 
 
-/* 
+/*
 #zc1 {
   width: 550px;
   height: 262px;
@@ -435,3 +436,6 @@ ul, li {
   display: block;
   position: fixed;
 } */
+.start-menu-items {
+  flex: 1;padding:0;top:auto;position: relative;
+}

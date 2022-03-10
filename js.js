@@ -1,37 +1,3 @@
-$(function() {
-  var elem = $("#settings");
-
-  $(document).on("click", function(e) {
-    if (!$(e.target).hasClass('start-button')) {
-      elem.slideUp();
-    }
-  });
-
-  function openSettings() {
-    elem.slideDown();
-  }
-
-
-  $("#settings-button").on("click.show", openSettings);
-
-  elem.click(function(e) {
-    e.stopPropagation();
-  });
-
-  $(".slide-toggle").click(function() {
-    $("#settings1").animate({
-      width: "toggle"
-    });
-  });
-
-  $(".slide-toggle1").click(function() {
-    $("#settings2").animate({
-      width: "toggle"
-    });
-  });
-
-});
-
 function createWindow({
   id,
   content,
@@ -55,11 +21,10 @@ function createWindow({
 
 
   $section.click(function() {
-    const zIndex = $section.css('z-index')
-    console.log({
-      zIndex
-    })
-    $section.css('z-index', zIndex + 1)
+    let zIndex = findMaxZIndex() +1 ;
+
+      console.log( {zIndex})
+    $section.css('z-index', zIndex)
   });
 
 
@@ -126,7 +91,7 @@ function attachWindowWithButton($window, $startButton) {
   $startButton.click(function(e) {
     e.preventDefault();
     if ($($window).is(':visible')) {
-      $($window).hide();
+      // $($window).hide();
     } else {
       $($window).show();
     }
@@ -135,6 +100,8 @@ function attachWindowWithButton($window, $startButton) {
 
 function showWindowOnDesktop($window, $startButton) {
   const $desktop = $('.desktop');
+  const zIndex = findMaxZIndex() + 1;
+  $($window).css('z-index', zIndex);
   $desktop.append($window);
 
   const $startMenu = $('.menu-starter');
@@ -183,56 +150,36 @@ function createWindowAndShowOnDesktop({
   showWindowOnDesktop($window, $startButton);
 }
 
-function closeStart() {
-  const $elem = $("#settings");
-  $elem.slideUp();
-}
+// function closeStart() {
+//   const $elem = $("#settings");
+//   $elem.slideUp();
+// }
 
 
-createWindowAndShowOnDesktop({
-  id: 'myWork',
-  title: 'My Work',
-  content: `
-	<div class='work-container' id='work-container'>
-		<a class='worktext' href='#'>
-			<img class='work' src='media/amazon logo.png' alt='Amazon'>
-			<p class='worktext'>Amazon</p>
-		</a>
-	</div>
-
-	<div class='work-container'
-		<a class='worktext' href='#'>
-			<img class='work' src='media/pngaaa.com-4173356.png' alt='DoS'>
-			<p class='worktext'>Deloitte</p>
-		</a>
-	</div>
-
-	<div class='work-container'>
-		<a class='worktext' href='https://fcawitech.com'>
-			<img class='work' src='media/fcalogo.jpeg' alt='FCA'>
-			<p class='worktext'>FCA</p>
-		</a>
-	</div>
-
-  <div class='work-container'>
-		<a class='worktext' href='#'>
-			<img class='work' src='media/ZoomScriptslogo.png' alt='ZC'>
-			<p class='worktext'>ZoomScript</p>
-		</a>
-	</div>
-
-
-	`,
-  windowStatus: '4 items',
-  windowStyle: {
-    width: 550,
-    height: 262,
-    left: 495,
-    top: 310,
-    display: 'block',
-    position: 'fixed',
-  }
-});
+// createWindowAndShowOnDesktop({
+//   id: 'myWork',
+//   title: 'My Work',
+//   content: `
+//
+//   <div class='work-container'>
+// 		<a class='worktext' href='#'>
+// 			<img class='work' src='media/ZoomScriptslogo.png' alt='ZC'>
+// 			<p class='worktext'>ZoomScript</p>
+// 		</a>
+// 	</div>
+//
+//
+// 	`,
+//   windowStatus: '4 items',
+//   windowStyle: {
+//     width: 550,
+//     height: 262,
+//     left: 495,
+//     top: 310,
+//     display: 'block',
+//     position: 'fixed',
+//   }
+// });
 
 createWindowAndShowOnDesktop({
   id: 'readmedoc',
@@ -277,32 +224,48 @@ createWindowAndShowOnDesktop({
   }
 });
 
-createWindowAndShowOnDesktop({
-  id: 'resume',
-  title: 'My Resume',
-  content: `<iframe src="media/anasmorsi_resume_2021.pdf" style="width:100%"></iframe>`,
-  windowStatus: 'Updated resume',
-  windowStyle: {
-    width: 550,
-    height: 262,
-    left: 489,
-    top: 23,
-    display: 'block',
-    position: 'fixed'
-  }
-});
-
-createWindowAndShowOnDesktop({
-  id: 'zc1',
-  title: 'ZoomScript',
-  content: `<iframe src='media/zc.pdf' style='width:100%'></iframe>`,
-  windowStatus: 'zc',
-  windowStyle: {
-		width: 550,
-		height: 262,
-		left: 595,
-		top: 330,
-		display: 'block',
-		position: 'fixed'
-  }
-});
+function handleZCIconClick() {
+  createWindowAndShowOnDesktop({
+    id: 'zc1',
+    title: 'My zc',
+    content: `<iframe src='media/zc.pdf' style='width:100%'></iframe>`,
+    windowStatus: 'ZoomScript',
+    windowStyle: {
+      width: 550,
+      height: 262,
+      left: 489,
+      top: 23,
+      display: 'block',
+      position: 'fixed'
+    }
+  });
+}
+// createWindowAndShowOnDesktop({
+//   id: 'resume',
+//   title: 'My Resume',
+//   content: `<iframe src="media/resume_2021.pdf" style="width:100%"></iframe>`,
+//   windowStatus: 'Updated resume',
+//   windowStyle: {
+//     width: 550,
+//     height: 262,
+//     left: 489,
+//     top: 23,
+//     display: 'block',
+//     position: 'fixed'
+//   }
+// });
+//
+// createWindowAndShowOnDesktop({
+//   id: 'zc1',
+//   title: 'ZoomScript',
+//   content: `<iframe src='media/zc.pdf' style='width:100%'></iframe>`,
+//   windowStatus: 'zc',
+//   windowStyle: {
+// 		width: 550,
+// 		height: 262,
+// 		left: 595,
+// 		top: 330,
+// 		display: 'block',
+// 		position: 'fixed'
+//   }
+// });
