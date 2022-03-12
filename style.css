@@ -221,6 +221,27 @@ ul.toolbar li {
   outline: none;
 }
 
+@media screen and (max-width: 800px) {
+  .start-button-pages {
+    width: 85px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  section#readmedoc.app.ui-draggable,
+  section#zc1.app.ui-draggable,
+  section#myWork.app.ui-draggable,
+  section#resume.app.ui-draggable
+   {
+    width: 100% !important;
+    height: auto !important;
+    bottom: 32px !important;
+    top: 0px !important;
+    position: fixed !important;
+    left: 0px !important;
+  }
+}
+
 .start-button-pages:hover {
   border-top: inset 2px black;
   border-left: inset 2px black;
@@ -409,6 +430,7 @@ ul, li {
   border: inset 2px;
   font-size: 14px;
   padding: 5px 10px;
+  background-color: silver;
 }
 
 #work {

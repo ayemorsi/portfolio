@@ -8,11 +8,19 @@ function createWindow({
   style = {}
 }) {
   const _style = {
-    width: 550,
-    height: 262,
-    left: 444,
-    top: 253,
+    width: 'auto',
+    height: 'auto',
+    bottom: 32,
+    top: 0,
     display: 'block',
+    position: 'fixed',
+
+    //
+    // width: 550,
+    // height: 262,
+    // left: 444,
+    // top: 253,
+    // display: 'block',
     ...style
   }
 
@@ -91,7 +99,7 @@ function attachWindowWithButton($window, $startButton) {
   $startButton.click(function(e) {
     e.preventDefault();
     if ($($window).is(':visible')) {
-      // $($window).hide();
+      $($window).hide();
     } else {
       $($window).show();
     }
