@@ -265,6 +265,23 @@ function handleMHSIconClick() {
     }
   });
 }
+
+function handleAZIconClick() {
+  createWindowAndShowOnDesktop({
+    id: 'AZ',
+    title: 'AZ',
+    content: `<iframe src='/Users/anasmorsi/github/portfolio/amazon.html' name='myFrame' style='width:100%'></iframe>`,
+    windowStatus: 'Amazon',
+    windowStyle: {
+      width: 550,
+      height: 262,
+      left: 257,
+      top: 119,
+      display: 'block',
+      position: 'fixed'
+    }
+  });
+}
 // createWindowAndShowOnDesktop({
 //   id: 'resume',
 //   title: 'My Resume',
