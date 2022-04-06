@@ -235,14 +235,31 @@ createWindowAndShowOnDesktop({
 function handleZCIconClick() {
   createWindowAndShowOnDesktop({
     id: 'zc1',
-    title: 'My zc',
+    title: 'ZC',
     content: `<iframe src='media/zc.pdf' style='width:100%'></iframe>`,
     windowStatus: 'ZoomScript',
     windowStyle: {
       width: 550,
       height: 262,
       left: 357,
-      top: 219,
+      top: 100,
+      display: 'block',
+      position: 'fixed'
+    }
+  });
+}
+
+function handleMHSIconClick() {
+  createWindowAndShowOnDesktop({
+    id: 'MHS',
+    title: 'MHS',
+    content: `<iframe src='media/MHS_Final_Brand-Guideline.pdf' style='width:100%'></iframe>`,
+    windowStatus: 'MHS',
+    windowStyle: {
+      width: 550,
+      height: 262,
+      left: 257,
+      top: 119,
       display: 'block',
       position: 'fixed'
     }
