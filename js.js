@@ -270,7 +270,7 @@ function handleAZIconClick() {
   createWindowAndShowOnDesktop({
     id: 'AZ',
     title: 'AZ',
-    content: `<iframe src='/Users/anasmorsi/github/portfolio/amazon.html' name='myFrame' style='width:100%'></iframe>`,
+    content: `<iframe src='amazon.html' name='myFrame' style='width:100%'></iframe>`,
     windowStatus: 'Amazon',
     windowStyle: {
       width: 550,
