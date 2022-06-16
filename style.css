@@ -1,4 +1,11 @@
 /* == set-up == */
+@media only screen and (max-width: 600px) {
+  body {
+  	display: none;
+  }
+}
+
+
 body {
   font-family: Microsoft Sans Serif, Wine Microsoft Sans Serif, Arial, MS UI Gothic, sans-serif;
   margin: 0;
