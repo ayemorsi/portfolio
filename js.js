@@ -194,15 +194,27 @@ createWindowAndShowOnDesktop({
   title: 'Readme',
   content: `
 	<div class="readme">
-		<h3>Welcome to my portfolio</h3>
+		<h3>Welcome to My Portfolio</h3>
 		<div class="readme-text">
-			<p style="font-size:12px">
-				I'm a UX designer. My current portfolio is a Windows95
-				operating system theme. I chose this OS because it was one of the first OS I operated on.
-				At the same time, I was clicking through the Windows95 emulator, appreciating the
-				easy/simple usability it had. It is still a work in progress; I will be updating it
-				with new features.
-			</p>
+    <p>
+        Inspired by nostalgia and simplicity, my portfolio is themed around the Windows 95 operating system—
+        one of the first systems I explored as a budding tech enthusiast. Revisiting the Windows 95 emulator 
+        reminded me of the timeless principles of intuitive and straightforward usability, which remain foundational 
+        in great design. While my portfolio is a work in progress, I’m excited to continue enhancing it with 
+        new features that reflect my growth and passion for creating seamless digital experiences.
+    </p>
+    <h3>About Me</h3>
+    <p>
+        I am an experienced UX Designer with over 7 years of expertise in crafting user-centered solutions and 
+        driving innovation in the AI space. My approach combines deep user research, rapid prototyping, and the 
+        development of scalable design systems to deliver impactful, data-driven results.
+    </p>
+    <p>
+        As a proven leader, I specialize in aligning cross-functional teams to build intuitive, AI-powered experiences 
+        that address complex challenges. My work focuses on leveraging AI technologies to create accessible, meaningful 
+        solutions that enhance user satisfaction and deliver measurable business value. With a passion for blending 
+        creativity and functionality, I aim to push the boundaries of design and innovation.
+    </p> 
 			<h5 style="margin-bottom:0">Existing Features:</h5>
 			<p style="font-size:12px">
 				Resizing windows (bottom right corner) <br>
