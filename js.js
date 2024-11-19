@@ -235,7 +235,7 @@ createWindowAndShowOnDesktop({
 	`,
   windowStatus: 'Readme',
   windowStyle: {
-    width: 676,
+    width: 707,
     height: 707,
     left: 10,
     top: 4,
