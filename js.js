@@ -14,37 +14,25 @@ function createWindow({
     top: 0,
     display: 'block',
     position: 'fixed',
-
-    //
-    // width: 550,
-    // height: 262,
-    // left: 444,
-    // top: 253,
-    // display: 'block',
     ...style
   }
 
-  const $section = $(`<section class="app">`)
+  const $section = $(`<section class="app ui-draggable">`);
   $section.css(_style);
 
-
   $section.click(function() {
-    let zIndex = findMaxZIndex() +1 ;
-
-      console.log( {zIndex})
-    $section.css('z-index', zIndex)
+    let zIndex = findMaxZIndex() + 1;
+    $section.css('z-index', zIndex);
   });
-
-
 
   $section.attr('id', id);
   $section.html(`
   <header class="titlebar">
   <div class="title">
     <div class="pull-right close expand" >
-      <button class="minimize" id="minimize1"><span class="fa fa-minus"></span></button>
-      <button class="square" id="square1"><span class="fa fa-square-o"></span></button>
-      <button class="times" id="times1"><span class="fa fa-times"></span></button>
+      <button class="minimize" id="minimize-${id}"><span class="fa fa-minus"></span></button>
+      <button class="square" id="square-${id}"><span class="fa fa-square-o"></span></button>
+      <button class="times" id="times-${id}"><span class="fa fa-times"></span></button>
     </div>
     <h1>
       <div class="icon-my-computer">${title}</div>
@@ -73,13 +61,13 @@ function createWindow({
   const $expand = $('.expand button.square', $section);
   $expand.click(function(e) {
     e.preventDefault();
-    $($section).toggleClass('fullscreen');
+    $section.toggleClass('fullscreen');
   });
 
   const $minimize = $('.close button.minimize', $section);
   $minimize.click(function(e) {
     e.preventDefault();
-    $($section).hide();
+    $section.hide();
   });
 
   return $section;
@@ -98,10 +86,12 @@ function createStartButton({
 function attachWindowWithButton($window, $startButton) {
   $startButton.click(function(e) {
     e.preventDefault();
-    if ($($window).is(':visible')) {
-      $($window).hide();
+    if ($window.is(':visible')) {
+      $window.hide();
     } else {
-      $($window).show();
+      $window.show();
+      let zIndex = findMaxZIndex() + 1;
+      $window.css('z-index', zIndex);
     }
   });
 }
@@ -109,7 +99,7 @@ function attachWindowWithButton($window, $startButton) {
 function showWindowOnDesktop($window, $startButton) {
   const $desktop = $('.desktop');
   const zIndex = findMaxZIndex() + 1;
-  $($window).css('z-index', zIndex);
+  $window.css('z-index', zIndex);
   $desktop.append($window);
 
   const $startMenu = $('.menu-starter');
@@ -138,111 +128,36 @@ function createWindowAndShowOnDesktop({
     style: windowStyle,
     onWindowClose: function(e) {
       e.preventDefault();
-      $($window).remove();
-      $($startButton).remove();
+      $window.remove();
+      $startButton.remove();
     },
     onWindowExpand: function(e) {
       e.preventDefault();
-      $($window).remove();
-      $($startButton).remove();
+      $window.toggleClass('fullscreen');
     }
   });
-  $($window).draggable({
+  $window.draggable({
     handle: '.titlebar'
   });
-  $($window).click(function() {
-    $($window).removeClass('active');
+  $window.click(function() {
+    $window.removeClass('active');
     $(this).addClass('active');
   });
   attachWindowWithButton($window, $startButton);
   showWindowOnDesktop($window, $startButton);
 }
 
-// function closeStart() {
-//   const $elem = $("#settings");
-//   $elem.slideUp();
-// }
-
-
-// createWindowAndShowOnDesktop({
-//   id: 'myWork',
-//   title: 'My Work',
-//   content: `
-//
-//   <div class='work-container'>
-// 		<a class='worktext' href='#'>
-// 			<img class='work' src='media/ZoomScriptslogo.png' alt='ZC'>
-// 			<p class='worktext'>ZoomScript</p>
-// 		</a>
-// 	</div>
-//
-//
-// 	`,
-//   windowStatus: '4 items',
-//   windowStyle: {
-//     width: 550,
-//     height: 262,
-//     left: 495,
-//     top: 310,
-//     display: 'block',
-//     position: 'fixed',
-//   }
-// });
-
-createWindowAndShowOnDesktop({
-  id: 'readmedoc',
-  title: 'Readme',
-  content: `
-	<div class="readme">
-		<h3>Welcome to My Portfolio</h3>
-		<div class="readme-text">
-    <p>
-        Inspired by nostalgia and simplicity, my portfolio is themed around the Windows 95 operating system—
-        one of the first systems I explored as a budding tech enthusiast. Revisiting the Windows 95 emulator 
-        reminded me of the timeless principles of intuitive and straightforward usability, which remain foundational 
-        in great design. While my portfolio is a work in progress, I’m excited to continue enhancing it with 
-        new features that reflect my growth and passion for creating seamless digital experiences.
-    </p>
-    <h3>About Me</h3>
-    <p>
-        I am an experienced UX Designer with over 7 years of expertise in crafting user-centered solutions and 
-        driving innovation in the AI space. My approach combines deep user research, rapid prototyping, and the 
-        development of scalable design systems to deliver impactful, data-driven results.
-    </p>
-    <p>
-        As a proven leader, I specialize in aligning cross-functional teams to build intuitive, AI-powered experiences 
-        that address complex challenges. My work focuses on leveraging AI technologies to create accessible, meaningful 
-        solutions that enhance user satisfaction and deliver measurable business value. With a passion for blending 
-        creativity and functionality, I aim to push the boundaries of design and innovation.
-    </p> 
-			<h5 style="margin-bottom:0">Existing Features:</h5>
-			<p style="font-size:12px">
-				Resizing windows (bottom right corner) <br>
-				Dragging windows <br>
-				Responsive windows tab when closing out <br>
-				Closing/opening out of windows
-			</p>
-
-			<h5 style="margin-bottom:0">Future features:</h5>
-			<p style="font-size:12px">
-				Creating a Windows95 mobile theme <br>
-				<strike>Maximizing windows</strike> <br>
-				Creating a WebGL classic game <br>
-				Adding a feedback input field
-			</p>
-
-	</div>
-	`,
-  windowStatus: 'Readme',
-  windowStyle: {
-    width: 707,
-    height: 707,
-    left: 10,
-    top: 4,
-    display: 'block',
-    position: 'fixed'
-  }
-});
+function findMaxZIndex() {
+  const $sections = Array.from($('section.ui-draggable'));
+  const maxZIndex = $sections.reduce((zIndex, $section) => {
+    let _zIndex = parseInt($($section).css('z-index'), 10);
+    if (isNaN(_zIndex)) {
+      _zIndex = 0;
+    }
+    return _zIndex > zIndex ? _zIndex : zIndex;
+  }, 0);
+  return maxZIndex;
+}
 
 function handleZCIconClick() {
   createWindowAndShowOnDesktop({
@@ -294,18 +209,61 @@ function handleAZIconClick() {
     }
   });
 }
-// createWindowAndShowOnDesktop({
-//   id: 'resume',
-//   title: 'My Resume',
-//   content: `<iframe src="media/resume_2021.pdf" style="width:100%"></iframe>`,
-//   windowStatus: 'Updated resume',
-//   windowStyle: {
-//     width: 550,
-//     height: 262,
-//     left: 489,
-//     top: 23,
-//     display: 'block',
-//     position: 'fixed'
-//   }
-// });
-//
+
+// Automatically open the Readme window on page load
+$(document).ready(function() {
+  createWindowAndShowOnDesktop({
+    id: 'readmedoc',
+    title: 'Readme',
+    content: `
+    <div class="readme">
+      <h3>Welcome to My Portfolio</h3>
+      <div class="readme-text">
+        <p>
+          Inspired by nostalgia and simplicity, my portfolio is themed around the Windows 95 operating system—
+          one of the first systems I explored as a budding tech enthusiast. Revisiting the Windows 95 emulator 
+          reminded me of the timeless principles of intuitive and straightforward usability, which remain foundational 
+          in great design. While my portfolio is a work in progress, I’m excited to continue enhancing it with 
+          new features that reflect my growth and passion for creating seamless digital experiences.
+        </p>
+        <h3>About Me</h3>
+        <p>
+          I am an experienced UX Designer with over 7 years of expertise in crafting user-centered solutions and 
+          driving innovation in the AI space. My approach combines deep user research, rapid prototyping, and the 
+          development of scalable design systems to deliver impactful, data-driven results.
+        </p>
+        <p>
+          As a proven leader, I specialize in aligning cross-functional teams to build intuitive, AI-powered experiences 
+          that address complex challenges. My work focuses on leveraging AI technologies to create accessible, meaningful 
+          solutions that enhance user satisfaction and deliver measurable business value. With a passion for blending 
+          creativity and functionality, I aim to push the boundaries of design and innovation.
+        </p> 
+        <h5 style="margin-bottom:0">Existing Features:</h5>
+        <p style="font-size:12px">
+          Resizing windows (bottom right corner) <br>
+          Dragging windows <br>
+          Responsive windows tab when closing out <br>
+          Closing/opening out of windows
+        </p>
+
+        <h5 style="margin-bottom:0">Future features:</h5>
+        <p style="font-size:12px">
+          Creating a Windows95 mobile theme <br>
+          <strike>Maximizing windows</strike> <br>
+          Creating a WebGL classic game <br>
+          Adding a feedback input field
+        </p>
+      </div>
+    </div>
+    `,
+    windowStatus: 'Readme',
+    windowStyle: {
+      width: 707,
+      height: 707,
+      left: 10,
+      top: 4,
+      display: 'block',
+      position: 'fixed'
+    }
+  });
+});
