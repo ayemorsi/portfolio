@@ -201,6 +201,7 @@ ul.toolbar li {
 
 .window-content {
   height: 100%;
+  overflow-y: auto;
 }
 
 .menu-starter {

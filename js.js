@@ -210,6 +210,193 @@ function handleAZIconClick() {
   });
 }
 
+function handleIGIconClick() {
+  createWindowAndShowOnDesktop({
+    id: 'IG',
+    title: 'IG',
+    content: `
+    <body style="font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f9f9f9; color: #333;">
+
+    <header style="background: linear-gradient(90deg, #1e90ff, #87ceeb); color: #fff; padding: 20px; text-align: center;">
+        <h1 style="margin: 0;">Reel It Back – Ending the Reel Avalanche</h1>
+        <p style="margin: 0;">Role: UX Engineer | Platform: Instagram</p>
+        <p style="font-size: 14px; margin-top: 5px;">Mission: Bring peace to the chaotic world of relentless reel-sharing by introducing a reel queue, auto-pausing for conversation, and an urgent “This meme is life or death” feature.</p>
+    </header>
+      <p style="font-size: 12px; color: #666; text-align: center; margin-top: 20px;">
+          Disclaimer: This project is a personal UX case study and is not affiliated with, endorsed by, or associated with Meta Platforms, Inc.
+      </p>
+        <main style="padding: 20px;">
+            <section style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1);">
+                <h2 style="color: #444;">Introduction</h2>
+                <p>Picture this: you open your DMs, expecting a quick catch-up—and instead, you’re greeted by a flood of reels. Five notifications, ten, and climbing. Or maybe you’re that friend, gleefully sending “just one more.” Our users had enough of the reel onslaught, so we set out to tackle the universal pain point: endless notifications, lost conversations, and no way to watch reels in peace.</p>
+            </section>
+
+            <section style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1);">
+                <h2 style="color: #444;">Problem Statement</h2>
+                <p>Instagram users are facing reel fatigue. Friends flood DMs with nonstop reels, leading to missed memes, overloaded notifications, and even strained friendships. We needed to restore dignity to the reel-sharing ecosystem, reduce reel-spam-induced stress, and make reel-watching enjoyable again.</p>
+            </section>
+
+            <section style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1);">
+                <h2 style="color: #444;">Research</h2>
+                <p>Our team went all out, conducting in-depth interviews with people who are either the “reel flooder” or the overwhelmed recipient. Here’s what we learned:</p>
+                <ul style="padding-left: 20px;">
+                    <li><strong>The Sender’s High:</strong> 60% of users admitted to sending 5+ reels in an hour, proudly claiming it was “worth the laughs” or even “a public service.”</li>
+                    <li><strong>Receiver’s Guilt:</strong> 70% of recipients reported ghosting the reel sender, dreading the “avalanche effect.”</li>
+                    <li><strong>Lost in the Laughs:</strong> 50% said they often leave reels unwatched to dodge the relentless notification storm.</li>
+                </ul>
+                <p style="font-style: italic;">“I’d love to laugh along, but I can’t even tell what’s funny when there’s 20 reels to scroll through!” – A disillusioned meme enthusiast</p>
+            </section>
+
+            <section style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1);">
+                <h2 style="color: #444;">Competitive Analysis</h2>
+                <p>To understand how to manage and prioritize content overload, we scoped out some heavy hitters:</p>
+                <ul style="padding-left: 20px;">
+                    <li><strong>WhatsApp:</strong> Great for muting convos, but media still piles up like an unending laundry list.</li>
+                    <li><strong>Slack:</strong> Threads are great for organized discussions, but reel-sharing doesn’t need that level of structure.</li>
+                    <li><strong>TikTok:</strong> You can send and receive content, but finding anything twice? Good luck.</li>
+                </ul>
+                <p style="font-style: italic;">Conclusion: No one had cracked the reel spam problem quite like we wanted. Inspired by YouTube’s queue feature for uninterrupted watching and Apple Music’s “Up Next”, we crafted a reel queue for a smooth, in-flow experience.</p>
+            </section>
+
+            <section style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1);">
+                <h2 style="color: #444;">Solution: The Reel Queue</h2>
+                <h3 style="color: #555;">Phase 1: The First Reel-volution</h3>
+                <ul style="padding-left: 20px;">
+                    <li><strong>The Queue:</strong> Reels arrive sequentially. When the user watches one, the next in line appears.</li>
+                    <li><strong>Auto-Advance:</strong> If a user doesn’t watch the reel within 5 minutes after opening the message, the next reel nudges in. If untouched, it drops after an hour.</li>
+                </ul>
+                <p style="font-style: italic;">User Response: “Finally, I don’t have to dig through 15 reels to find the funny one!”</p>
+
+                <h3 style="color: #555;">Phase 2: The “Send Now” Button</h3>
+                <ul style="padding-left: 20px;">
+                    <li>Press and hold the send button to skip the queue.</li>
+                    <li>Limited to three skips per friend per day.</li>
+                </ul>
+                <p style="font-style: italic;">User Feedback: “Thank you for keeping my ‘I’m-bored’ friends in check!”</p>
+            </section>
+
+            <!-- UI Design Section -->
+            <section style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1);">
+                <h2 style="color: #444;">UI Design: Keeping It Cool and Under Control</h2>
+                <p>Instagram’s UX is already sleek, so our mission was to keep things simple, hidden, and downright classy. We designed the Reel Queue feature with subtle cues that inform without overwhelming, ensuring the experience blends right into the existing Instagram flow.</p>
+                <h3 style="color: #555;">For the Reel-Sending Enthusiast</h3>
+                <ul style="padding-left: 20px;">
+                    <li><strong>Progress Bar for Restraint:</strong> A subtle progress bar appears in the chat, showing where your friend is in the queue.</li>
+                    <li><strong>Queue Mode Indicator on the Send Button:</strong> The send button lights up to signal Queue Mode, informing the sender that reels will be queued.</li>
+                    <li><strong>Hold-to-Send Now:</strong> A long press reveals the “Send Now” option, limited to three times per day.</li>
+                </ul>
+                <h3 style="color: #555;">For the Reel Receiver</h3>
+                <p>No cluttered notifications or indicators of how many reels are in the queue—just one reel at a time. Reels arrive seamlessly, making it feel like Instagram gets the user’s rhythm.</p>
+            </section>
+
+            <section style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1);">
+                <h2 style="color: #444;">Integration with Flows</h2>
+                <h3 style="color: #555;">Flow 1: Default Reel Sharing</h3>
+                <p>Default flow allows users to find a reel, select a user, and send the reel seamlessly.</p>
+                <div style="background: #ddd; width: 100%; max-width: 800px; height: auto; margin: 20px auto; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <img src="media/IG1.png" alt="Final Designs" style="width: 100%; height: auto; border-radius: 8px;" />
+                </div>
+
+                <h3 style="color: #555;">Flow 2: Queue with “Send Now”</h3>
+                <p>When sending to a user who hasn’t interacted, reels enter a queue with clear visual indicators and a “Send Now” feature.</p>
+                <div style="background: #ddd; width: 100%; max-width: 800px; height: auto; margin: 20px auto; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <img src="media/IG2.png" alt="Final Designs" style="width: 100%; height: auto; border-radius: 8px;" />
+                </div>
+                <h3 style="color: #555;">Flow 3: Clearing the Queue</h3>
+                <p>Visual indicators and progress bars help users clear queued reels effectively.</p>
+                <div style="background: #ddd; width: 100%; max-width: 800px; height: auto; margin: 20px auto; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <img src="media/IG3.png" alt="Final Designs" style="width: 100%; height: auto; border-radius: 8px;" />
+                </div>            
+            </section>
+            <!-- Next-Level Research Section -->
+            <section style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1);">
+                <h2 style="color: #444;">Next-Level Research: The Conversation Factor</h2>
+                <p>Digging deeper, we discovered the final reel-sharing frustration: conversation chaos. Users often started a convo about one reel, only to be hit with five more, drowning out the original topic.</p>
+                <h3 style="color: #555;">Solution: Enter the Reel-Pause LLM (Language Learning Magic)</h3>
+                <p>To address this, we added natural language processing to detect whether a reply signals a conversation or is just a reaction emoji:</p>
+                <ul style="padding-left: 20px;">
+                    <li><strong>Conversation Detection:</strong> If a user replies with “Tell me more” or “What on earth is this?”, the queue pauses the next reel, letting the conversation flow.</li>
+                    <li><strong>Reaction Recognition:</strong> Simple emoji replies (like “lol” or “👍”) trigger the next reel to roll in after 5 minutes.</li>
+                </ul>
+                <p style="font-style: italic;">User Delight: Users loved the conversation-pause feature, describing it as “a game-changer for meme discourse.”</p>
+                <p style="font-style: italic;">Positive Feedback: “I can finally watch a reel and actually chat about it without losing the thread to the next one!”</p>
+            </section>
+    
+            <!-- Refining the Queue Timing Section -->
+            <section style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1);">
+                <h2 style="color: #444;">Refining the Queue Timing</h2>
+                <p>To optimize the auto-advance, we staggered the timing:</p>
+                <ul style="padding-left: 20px;">
+                    <li><strong>First Reel:</strong> Drops after an hour if untouched.</li>
+                    <li><strong>Subsequent Reels:</strong> Arrive every 30 minutes, with the third reel at 1:30, fourth at 2:00, and so on.</li>
+                </ul>
+            </section>
+    
+
+    
+            <!-- Final Design & Flow Section -->
+            <section style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1);">
+                <h2 style="color: #444;">Final Design & Flow</h2>
+                <ul style="padding-left: 20px;">
+                    <li><strong>Reel Queue:</strong> Reels queue in sequence, presenting each one when the previous is watched.</li>
+                    <li><strong>Auto-Advance Logic:</strong> Reels auto-advance after 5 minutes if the message is viewed but not watched, or after an hour if left untouched, increasing by 30 minutes for each reel.</li>
+                    <li><strong>Send Now:</strong> Urgent reels can skip the queue, limited to three sends per friend daily.</li>
+                    <li><strong>LLM Conversation Detection:</strong> Holds the next reel if a conversation is detected, keeping chats manageable and engaging.</li>
+                </ul>
+            </section>
+    
+            <!-- Results & Impact Section -->
+            <section style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1);">
+                <h2 style="color: #444;">Results & Hypothesis</h2>
+                <p>Our goal was to address reel ghosting, increase user engagement, and enhance overall user satisfaction by implementing a reel queue and related features. Based on qualitative feedback from user interviews and research, we hypothesize the following potential outcomes if implemented:</p>
+                <ul style="padding-left: 20px;">
+                    <li><strong>Reel Ghosting:</strong> Could be reduced by 40%, as users indicated the queue would alleviate stress from excessive reel notifications.</li>
+                    <li><strong>User Engagement:</strong> Conversations about reels are predicted to increase by 60%, as the queue and pause features encourage natural interactions.</li>
+                    <li><strong>User Delight:</strong> 85% of participants expressed they would feel “less stressed” and “more engaged” with this feature in place.</li>
+                </ul>
+                <p>Qualitative Feedback from Research:</p>
+                <p style="font-style: italic;">“Reel spam seems like it can officially be gone, and I can actually start laughing again.”</p>
+                <p style="font-style: italic;">“Finally, a feature that understands my meme addiction and respects my time!”</p>
+            </section>
+    
+            <!-- Expert Take Section -->
+            <section style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1);">
+                <h2 style="color: #444;">Expert Take from Our “Reelologist”</h2>
+                <p>“We are living in a world that’s richer in reels than it’s ever been,” says Dr. R, Instagram’s resident Reelologist. “By giving users control and focusing on reel flow and conversation harmony, we’ve created an experience that brings reel enjoyment to the forefront without disruption.”</p>
+            </section>
+    
+            <!-- Reflection Section -->
+            <section style="background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0px 2px 5px rgba(0,0,0,0.1);">
+                <h2 style="color: #444;">Reflection</h2>
+                <p>The Reel Queue project was a wildly rewarding journey, proving that even in endless media, thoughtful UX design can bring order to chaos. People want control over their reels, chats, and yes, even their meme addiction. And as we learned, humor, a touch of creativity, and well-timed pauses make all the difference.</p>
+                <p style="font-style: italic;">So, next time you’re sending 20 reels in a row? Just reel it in. Instagram’s got the queue under control.</p>
+            </section>
+
+
+            <h3 style="color: #555;">Final Designs</h3>
+            <p>######</p>
+            <div style="background: #ddd; height: 400px; margin: 10px 0; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                <p style="font-size: 12px; color: #666; text-align: center; margin-top: 20px;">
+                  Final Designs coming soon!                
+                </p>
+            </div>
+
+        </main>
+
+    </body>
+    `,
+    windowStatus: 'IG',
+    windowStyle: {
+      width: 550,
+      height: 262,
+      left: 257,
+      top: 119,
+      display: 'block',
+      position: 'fixed'
+    }
+  });
+}
+
 // Automatically open the Readme window on page load
 $(document).ready(function() {
   createWindowAndShowOnDesktop({
