@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anas Morsi | Portfolio</title>
+  <link rel="stylesheet" href="https://use.typekit.net/ehh4lya.css">
+  <link rel="stylesheet" href="conventional.css">
+</head>
+<body>
+  <nav class="side">
+    <div class="side__inner">
+      <div class="top"><a href="#">Anas Morsi</a></div>
+      <div class="bottom">
+        <a href="mailto:contact@anasmorsi.com">Email Me</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="portfolio-header">
+    <h1>Anas Morsi</h1>
+    <p>UX Designer | Innovator | AI Enthusiast</p>
+  </header>
+
+  <nav class="portfolio-nav">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="button-container">
+    <button id="back-to-selection" onclick="goToSelection()">Back to Mode Selection</button>
+    <button id="toggle-mode" onclick="toggleMode()">Switch to Fun Windows 95 Emulator Portfolio</button>
+  </div>
+
+  <main>
+    <section id="about" class="section section--about">
+      <div class="section__inner">
+        <a class="pre" href="#about"><span>#1</span>About</a>
+        <h2>About Me</h2>
+        <p>
+          I am an experienced UX Designer with over 7 years of expertise in crafting user-centered solutions and driving innovation in the AI space. 
+          My approach combines deep user research, rapid prototyping, and the development of scalable design systems to deliver impactful, data-driven results.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" class="section section--projects">
+      <div class="section__inner">
+        <a class="pre" href="#projects"><span>#2</span>Projects</a>
+        <h2>Projects</h2>
+        <div class="project-card">
+          <h3>Bloomberg Law AI Technology Preview</h3>
+          <p>
+            Led the design and research for Bloomberg Law's AI Technology Preview and Innovation Studio. 
+            Developed the first design for the Bloomberg Law Assistant chat and streamlined components for cost-effective implementation.
+          </p>
+        </div>
+        <div class="project-card">
+          <h3>Instagram Reel Queue Case Study</h3>
+          <p>
+            Designed a feature to queue reels sent by friends for better user experience. Incorporated NLP-based conversation detection to improve user interactions.
+          </p>
+        </div>
+        <div class="project-card">
+          <h3>GarKar</h3>
+          <p>
+            Conceptualized and designed an app for car-sharing within apartment complexes, emphasizing streamlined user verification and a seamless booking experience.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--contact">
+      <div class="section__inner">
+        <a class="pre" href="#contact"><span>#3</span>Contact</a>
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me via email or LinkedIn:</p>
+        <ul>
+          <li><a href="mailto:contact@anasmorsi.com">contact@anasmorsi.com</a></li>
+          <li><a href="https://www.linkedin.com/in/anas-morsi/">LinkedIn</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="portfolio-footer">
+    <div class="container">
+      <p>© 2024 Anas Morsi. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function goToSelection() {
+      localStorage.removeItem("portfolioMode");
+      window.location.href = "index.html";
+    }
+    function toggleMode() {
+      localStorage.setItem("portfolioMode", "windows95");
+      window.location.href = "windows95.html";
+    }
+  </script>
+</body>
+</html>

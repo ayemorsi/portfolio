@@ -492,3 +492,53 @@ ul, li {
 .start-menu-items {
   flex: 1;padding:0;top:auto;position: relative;
 }
+
+
+
+#toggle-mode {
+  
+  padding: 10px 20px;
+  background-color: #008080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#toggle-mode:hover {
+  background-color: #005f5f;
+}
+
+#back-to-selection {
+
+  padding: 10px 20px;
+  background-color: #800000; /* A different color to distinguish it */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#back-to-selection:hover {
+  background-color: #5f0000; /* A darker shade for hover */
+}
+
+.button-container {
+  display: flex; /* Enables flexbox layout */
+  justify-content: flex-end; /* Aligns buttons to the right */
+  gap: 10px; /* Adds space between buttons */
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  background-color: #008080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
