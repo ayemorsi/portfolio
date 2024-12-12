@@ -265,3 +265,80 @@ html {
     }
   }
   
+
+  /* Password Input Styling */
+#project-lock {
+  margin: 20px 0;
+  text-align: center;
+}
+
+#project-password {
+  width: 80%;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+#project-password:focus {
+  border-color: #008080;
+  background-color: #fff;
+}
+
+#project-lock button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #008080;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#project-lock button:hover {
+  background-color: #005f5f;
+}
+
+
+
+
+
+.case-study-link {
+  font-size: 16px; /* Match font size */
+  color: blue; /* Standard blue for links */
+  text-decoration: underline; /* Underline for links */
+  background: none; /* No background for button */
+  border: none; /* No border for button */
+  cursor: pointer; /* Pointer cursor for buttons */
+  font-family: inherit; /* Match font family */
+  padding: 0; /* Remove padding for inline style */
+}
+
+.case-study-link:hover {
+  color: darkblue; /* Darker blue on hover */
+}
+
+.case-study-link:focus {
+  outline: none; /* Remove default focus outline */
+  text-decoration: underline; /* Keep underline on focus */
+}
+
+
+video {
+  width: 100%; /* Make the video responsive and fit the card */
+  max-height: 400px; /* Limit the height for consistent design */
+  margin-top: 20px; /* Add spacing between the video and other content */
+  border-radius: 8px; /* Rounded corners for a polished look */
+  outline: none; /* Remove default outline */
+}
+
+video:focus {
+  outline: 2px solid #008080; /* Add an accessible focus outline */
+}

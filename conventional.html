@@ -26,6 +26,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -51,31 +52,114 @@
       <div class="section__inner">
         <a class="pre" href="#projects"><span>#2</span>Projects</a>
         <h2>Projects</h2>
-        <div class="project-card">
-          <h3>Bloomberg Law AI Technology Preview</h3>
-          <p>
-            Led the design and research for Bloomberg Law's AI Technology Preview and Innovation Studio. 
-            Developed the first design for the Bloomberg Law Assistant chat and streamlined components for cost-effective implementation.
-          </p>
+
+        <div id="project-lock">
+          <input type="password" id="project-password" placeholder="Enter Password">
+          <button onclick="unlockProjects()">Unlock Projects</button>
         </div>
-        <div class="project-card">
-          <h3>Instagram Reel Queue Case Study</h3>
-          <p>
-            Designed a feature to queue reels sent by friends for better user experience. Incorporated NLP-based conversation detection to improve user interactions.
-          </p>
-        </div>
-        <div class="project-card">
-          <h3>GarKar</h3>
-          <p>
-            Conceptualized and designed an app for car-sharing within apartment complexes, emphasizing streamlined user verification and a seamless booking experience.
-          </p>
-        </div>
+
+        <div id="project-content" style="display: none;"> 
+          <div class="project-card">
+            <h3>Bloomberg Law</h3>
+            <p>
+              Led the design and research for Bloomberg Law's AI Technology Preview and Innovation Studio. 
+              Developed the first design for the Bloomberg Law Assistant chat and streamlined components for cost-effective implementation.
+
+             
+            </p>
+            <a href=" https://www.linkedin.com/posts/anas-morsi_now-available-to-bloomberg-law-innovation-activity-7219866310254436352-XLNy?utm_source=share&utm_medium=member_desktop" target="_blank">LinkedIn Post</a>
+            <br><br>
+            <a target="_blank">Designs Coming Soon!</a> 
+          </div>
+
+          <div class="project-card">
+            <h3>Instagram</h3>
+            <p>
+              Designed a feature to queue reels sent by friends for better user experience. Incorporated NLP-based conversation detection to improve user interactions.
+            </p>
+            
+            <a class="case-study-link" href="instagram.html" target="_blank">
+              View Case Study
+              <svg class="external-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                <path d="M14 3h7a1 1 0 0 1 1 1v7h-2V5.41l-9.29 9.3a1 1 0 0 1-1.42 0l-1-1a1 1 0 0 1 0-1.42l9.3-9.29H14V3ZM5 6h5a1 1 0 1 1 0 2H6v11h11v-4a1 1 0 1 1 2 0v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z" fill="currentColor"/>
+              </svg>
+            </a>
+            
+
+          </div>
+
+          <div class="project-card">
+            <h3>Amazon</h3>
+            <p>
+              I worked on a three-month project to design a safety reporting application for Amazon employees. The goal was to replace the manual, paper-based process with a quick and easy digital solution. This required maintaining compatibility with the existing backend and simplifying the complex hazard classification process for less experienced users.
+              <br><br>
+              I conducted usability testing with 30 participants and iterated based on feedback, improving reporting accuracy from 51% to 93%. I collaborated with a UX writer to simplify hazard terminology and created clear descriptions to guide users. The final design allowed employees to submit safety concerns efficiently while maintaining data integrity.
+            </p>
+            <a href="media/Anas_Amazon_Final_am.pdf" target="_blank">View Case Study (PDF)</a> 
+
+            <video controls style="width: 100%; margin-top: 20px; border-radius: 8px;">
+              <source src="media/az-final-design.mov" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+          </div>
+
+          <div class="project-card">
+            <h3>Deloitte</h3>
+            <p>
+              <b>Consultant – UX Designer | Front-End Developer</b>
+              <br><br>
+              During my time at Deloitte, I worked as a consultant delivering cutting-edge design and development solutions across both public and commercial sectors. I led UX efforts on over six successful projects, including a global initiative for Amazon and a $35M modernization program for the Department of State. My work ranged from designing user-centered HR portals to crafting intuitive, responsive interfaces for large-scale enterprise applications.
+              <br><br>
+              For Amazon, I led the design of a solution deployed in 175+ fulfillment centers, driving adoption through user research and high-fidelity prototypes. At the Department of State, I spearheaded UX for a modernization initiative, conducting extensive research to streamline workflows and improve usability for thousands of users. My ability to bridge technical and user needs allowed me to deliver seamless, impactful solutions that exceeded client expectations.
+            </p>
+          </div>
+
+          <div class="project-card">
+            <h3>FCA</h3>
+            <p>
+              As the Lead Front-End Developer, I took charge of implementing and optimizing the user interface for the FCA Witech website. I collaborated closely with the UX team to ensure the design translated seamlessly into a functional, responsive, and accessible interface. My responsibilities included leading the development of interactive components, maintaining code quality, and ensuring the site met performance and accessibility standards while delivering an engaging user experience.            </p>
+              <a href="https://www.fcawitech.com/" target="_blank">Visit FCA Witech Website</a>
+          </div>
+          
+          
+          <div class="project-card">
+            <h3>MHS</h3>
+            <p>
+              I developed the brand identity for Michigan Health Specialists (MHS), crafting a cohesive visual system to reflect their professionalism and trustworthiness. This included defining the primary color palette, typography, and responsive logo scalability guidelines to ensure consistency across all platforms.
+              <br><br>
+              The project emphasized adaptability with clear space rules and logo variations for seamless application across digital and print materials. These guidelines established a strong and recognizable brand identity, aligning with MHS's mission and values.
+            </p>
+            <a href="media/MHS_Final_Brand-Guideline.pdf" target="_blank">View Case Study (PDF)</a> 
+          </div>
+
+          <div class="project-card">
+            <h3>ZoomScript</h3>
+            <p>
+              In 2016, I worked on ZoomScript, a modern application designed to simplify prescription management and refills for patients. Over four weeks, I conducted market research, competitive analysis, and usability testing to understand patient pain points. Insights from 15 user interviews and surveys revealed that 86% of participants found traditional refill methods cumbersome and slow.
+              <br><br>
+              As a UX/UI designer and researcher, I crafted low-fi to high-fi prototypes using tools like Adobe XD and Photoshop. The result was an intuitive mobile solution enabling patients to manage and refill prescriptions conveniently, addressing the need for a more seamless pharmacy experience.
+            </p>
+            <a href="media/zc.pdf" target="_blank">View Case Study (PDF)</a> 
+          </div>
+
+
+        </div> 
+
+      </div>
+    </section>
+
+    <section id="resume" class="section section--resume">
+      <div class="section__inner">
+        <a class="pre" href="#resume"><span>#3</span>Resume</a>
+        <h2>Resume</h2>
+        <p>Download my resume <a href="Anas_Morsi_Resume.pdf" target="_blank">here</a>.</p>
       </div>
     </section>
 
     <section id="contact" class="section section--contact">
       <div class="section__inner">
-        <a class="pre" href="#contact"><span>#3</span>Contact</a>
+        <a class="pre" href="#contact"><span>#4</span>Contact</a>
         <h2>Contact</h2>
         <p>Feel free to reach out to me via email or LinkedIn:</p>
         <ul>
@@ -100,6 +184,21 @@
     function toggleMode() {
       localStorage.setItem("portfolioMode", "windows95");
       window.location.href = "windows95.html";
+    }
+
+    function unlockProjects() {
+      const passwordInput = document.getElementById('project-password');
+      const password = passwordInput.value;
+
+      // Replace with your actual password
+      const correctPassword = "anas"; 
+
+      if (password === correctPassword) {
+        document.getElementById('project-content').style.display = 'block';
+        passwordInput.value = ''; // Clear the password field
+      } else {
+        alert("Incorrect password.");
+      }
     }
   </script>
 </body>
