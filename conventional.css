@@ -342,3 +342,41 @@ video {
 video:focus {
   outline: 2px solid #008080; /* Add an accessible focus outline */
 }
+
+
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Adds space between the images */
+  margin-top: 20px;
+}
+
+.garkar-image {
+  width: 45%; /* Adjust the size to fit within the container */
+  height: auto;
+  border-radius: 8px; /* Optional: Adds rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for depth */
+}
+
+
+
+
+
+.video-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.garkar-video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-caption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
