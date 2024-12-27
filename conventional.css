@@ -321,6 +321,7 @@ video {
   margin-top: 20px; /* Add spacing between the video and other content */
   border-radius: 8px; /* Rounded corners for a polished look */
   outline: none; /* Remove default outline */
+  
 }
 
 video:focus {
