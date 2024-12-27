@@ -1,272 +1,261 @@
 /* Global Typography */
 html {
-    font-family: "ff-meta-serif-web-pro", serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
-    box-sizing: border-box;
+  font-family: "ff-meta-serif-web-pro", serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f6f7f9; /* Soft neutral for a clean backdrop */
+}
+
+/* Hide Side Navigation on Smaller Screens */
+@media (max-width: 940px) {
+  .side {
+    display: none; /* Completely hide the side navigation for screens smaller than 940px */
   }
-  
-  *, *::before, *::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-  }
-  
+}  
+
+/* Header */
+.portfolio-header {
+  background-color: #004e64; /* Rich teal for header */
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.portfolio-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.portfolio-header p {
+  font-size: 1.2rem;
+  color: #c7ecee; /* Soft accent green */
+}
+
+/* Navigation */
+.portfolio-nav {
+  background: #002b3d; /* Darker shade for contrast */
+  color: white;
+  padding: 10px 0;
+}
+
+.portfolio-nav ul {
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio-nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.portfolio-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.portfolio-nav ul li a:hover {
+  color: #c7ecee; /* Matches header accent */
+}
+
+/* Sections */
+.section {
+  padding: 50px 75px;
+}
+
+.section__inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2rem;
+  color: #004e64; /* Match primary header */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 1rem;
+  color: #555; /* Muted text */
+  margin-bottom: 20px;
+}
+
+/* Project Cards */
+.project-card {
+  background: #ffffff; /* Clean white card */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  color: #002b3d; /* Dark teal for headings */
+  font-weight: 600;
+}
+
+.project-card p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.project-card a {
+  color: #0077b6; /* Bright blue accent for links */
+  font-weight: 500;
+}
+
+.project-card a:hover {
+  color: #005f73; /* Slightly darker blue for hover */
+}
+
+/* Footer */
+.portfolio-footer {
+  text-align: center;
+  padding: 20px 0;
+  background: #002b3d; /* Footer matches nav */
+  color: white;
+}
+
+.portfolio-footer p {
+  font-size: 0.875rem;
+}
+
+/* Buttons */
+.button-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#back-to-selection {
+  background-color: #800000;
+  color: white;
+}
+
+#back-to-selection:hover {
+  background-color: #5f0000;
+}
+
+#toggle-mode {
+  background-color: #004e64;
+  color: white;
+}
+
+#toggle-mode:hover {
+  background-color: #003844;
+}
+
+/* Media Queries */
+
+/* Small screens (phones) */
+@media (max-width: 600px) {
   body {
-    background-color: #f4f4f4;
-  }
-  
- /* Side Navigation */
-.side {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 60px;
-    background: #008080;
-    color: white;
-    font-size: 12px;
-    z-index: 10;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .side .top,
-  .side .bottom {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) rotate(-90deg);
-    text-align: center;
-    margin: 10px 0;
-  }
-  
-  .side .top {
-    top: 20px;
-  }
-  
-  .side .bottom {
-    bottom: 20px;
-  }
-  
-  .side a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  /* Hide Side Navigation on Smaller Screens */
-  @media (max-width: 940px) {
-    .side {
-      display: none; /* Completely hide the side navigation for screens smaller than 940px */
-    }
-  }  
-  
-  /* Header */
-  .portfolio-header {
-    background-color: #008080;
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-  }
-  
-  .portfolio-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .portfolio-header p {
-    font-size: 1.2rem;
-  }
-  
-  /* Navigation */
-  .portfolio-nav {
-    background: #333;
-    color: white;
-    padding: 10px 0;
-  }
-  
-  .portfolio-nav ul {
-    list-style: none;
-    text-align: center;
-  }
-  
-  .portfolio-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-  }
-  
-  .portfolio-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .portfolio-nav ul li a:hover {
-    color: #fdef52;
-  }
-  
-  /* Sections */
-  .section {
-    padding: 50px 75px;
-  }
-  
-  .section__inner {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .section h2 {
-    font-size: 2rem;
-    color: #008080;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .section p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
-  }
-  
-  /* Project Cards */
-  .project-card {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .project-card h3 {
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  /* Footer */
-  .portfolio-footer {
-    text-align: center;
-    padding: 20px 0;
-    background: #333;
-    color: white;
-  }
-  
-  /* Buttons */
-  .button-container {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    display: flex;
-    gap: 10px;
-  }
-  
-  .button-container button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     font-size: 14px;
   }
-  
-  #back-to-selection {
-    background-color: #800000;
-    color: white;
-  }
-  
-  #back-to-selection:hover {
-    background-color: #5f0000;
-  }
-  
-  #toggle-mode {
-    background-color: #008080;
-    color: white;
-  }
-  
-  #toggle-mode:hover {
-    background-color: #005f5f;
-  }
-  
-  /* Media Queries */
-  
-  /* Small screens (phones) */
-  @media (max-width: 600px) {
-    body {
-      font-size: 14px;
-    }
-  
-    .portfolio-header h1 {
-      font-size: 2rem;
-    }
-  
-    .portfolio-header p {
-      font-size: 1rem;
-    }
-  
-    .portfolio-nav ul li {
-      display: block;
-      margin: 10px 0;
-    }
-  
-    .button-container {
-      flex-direction: column;
-      top: auto;
-      bottom: 10px;
-      right: 10px;
-    }
-  
-    .button-container button {
-      width: 100%;
-    }
-  
-    .section h2 {
-      font-size: 1.5rem;
-    }
-  
-    .section p {
-      font-size: 0.875rem;
-    }
-  }
-  
-  /* Medium screens (tablets) */
-  @media (max-width: 900px) {
-    .portfolio-header {
-      padding: 30px 20px;
-    }
-  
-    .portfolio-header h1 {
-      font-size: 2.2rem;
-    }
-  
-    .portfolio-header p {
-      font-size: 1rem;
-    }
-  
-    .portfolio-nav ul li {
-      margin: 0 10px;
-    }
-  
-    .section__inner {
-      padding: 0 10px;
-    }
-  }
-  
-  /* Large screens (desktops) */
-  @media (min-width: 1200px) {
-    .portfolio-header h1 {
-      font-size: 3rem;
-    }
-  
-    .section__inner {
-      max-width: 1200px;
-    }
-  
-    .project-card {
-      padding: 20px;
-    }
-  }
-  
 
-  /* Password Input Styling */
+  .portfolio-header h1 {
+    font-size: 2rem;
+  }
+
+  .portfolio-header p {
+    font-size: 1rem;
+  }
+
+  .portfolio-nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .button-container {
+    flex-direction: column;
+    top: auto;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .button-container button {
+    width: 100%;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .section p {
+    font-size: 0.875rem;
+  }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 900px) {
+  .portfolio-header {
+    padding: 30px 20px;
+  }
+
+  .portfolio-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .portfolio-header p {
+    font-size: 1rem;
+  }
+
+  .portfolio-nav ul li {
+    margin: 0 10px;
+  }
+
+  .section__inner {
+    padding: 0 10px;
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+  .portfolio-header h1 {
+    font-size: 3rem;
+  }
+
+  .section__inner {
+    max-width: 1200px;
+  }
+
+  .project-card {
+    padding: 25px;
+  }
+}
+
+/* Password Input Styling */
 #project-lock {
   margin: 20px 0;
   text-align: center;
@@ -286,7 +275,7 @@ html {
 }
 
 #project-password:focus {
-  border-color: #008080;
+  border-color: #004e64;
   background-color: #fff;
 }
 
@@ -295,7 +284,7 @@ html {
   padding: 10px 20px;
   font-size: 16px;
   color: white;
-  background-color: #008080;
+  background-color: #004e64;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -303,16 +292,12 @@ html {
 }
 
 #project-lock button:hover {
-  background-color: #005f5f;
+  background-color: #003844;
 }
-
-
-
-
 
 .case-study-link {
   font-size: 16px; /* Match font size */
-  color: blue; /* Standard blue for links */
+  color: #0077b6; /* Bright blue */
   text-decoration: underline; /* Underline for links */
   background: none; /* No background for button */
   border: none; /* No border for button */
@@ -322,14 +307,13 @@ html {
 }
 
 .case-study-link:hover {
-  color: darkblue; /* Darker blue on hover */
+  color: #005f73; /* Darker blue */
 }
 
 .case-study-link:focus {
   outline: none; /* Remove default focus outline */
   text-decoration: underline; /* Keep underline on focus */
 }
-
 
 video {
   width: 100%; /* Make the video responsive and fit the card */
@@ -340,10 +324,8 @@ video {
 }
 
 video:focus {
-  outline: 2px solid #008080; /* Add an accessible focus outline */
+  outline: 2px solid #004e64; /* Add an accessible focus outline */
 }
-
-
 
 .image-container {
   display: flex;
@@ -358,10 +340,6 @@ video:focus {
   border-radius: 8px; /* Optional: Adds rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for depth */
 }
-
-
-
-
 
 .video-container {
   margin-top: 20px;
@@ -380,3 +358,15 @@ video:focus {
   font-size: 14px;
   color: #555;
 }
+
+.project-card-content {
+  display: flex;
+  align-items: flex-start; /* Align logo and content at the top */
+  gap: 15px; /* Add space between the logo and the text */
+}
+
+.project-logo {
+  width: 60px; /* Adjust the width of the logo */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0,
