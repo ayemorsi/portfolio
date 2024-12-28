@@ -180,7 +180,7 @@ function handleMHSIconClick() {
   createWindowAndShowOnDesktop({
     id: 'MHS',
     title: 'MHS',
-    content: `<iframe src='media/MHS_Final_Brand-Guideline.pdf' style='width:100%'></iframe>`,
+    content: `<iframe src='mhs.html' style='width:100%'></iframe>`,
     windowStatus: 'MHS',
     windowStyle: {
       width: 550,
