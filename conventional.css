@@ -370,4 +370,38 @@ video:focus {
   width: 60px; /* Adjust the width of the logo */
   height: auto; /* Maintain aspect ratio */
   border-radius: 8px; /* Optional: Add rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0,
+  box-shadow: 0 4px 6px rgba(0, 0, 0,);
+}
+
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.feature-card {
+  flex: 1 1 calc(33.33% - 20px); /* Responsive 3-column layout */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.feature-card video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.feature-card a {
+  display: block;
+  margin-top: 10px;
+  color: #0073b1; /* LinkedIn blue */
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .feature-card {
+    flex: 1 1 100%; /* Stack in one column on smaller screens */
+  }
+}
