@@ -396,7 +396,7 @@ video:focus {
 .feature-card a {
   display: block;
   margin-top: 10px;
-  color: #0073b1; /* LinkedIn blue */
+  color: #0073b1; 
   text-decoration: none;
 }
 
