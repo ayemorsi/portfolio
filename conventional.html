@@ -166,7 +166,33 @@
             <div class="image-container">
               <img src="media/GarKar-Light.png" alt="GarKar Light Landing Page" class="garkar-image">
               <img src="media/GarKar-Dark.png" alt="GarKar Dark Landing Page" class="garkar-image">
-            </div>
+
+              <!-- Slideshow for GarKar images -->
+              <div class="slideshow-container">
+                <div class="slideshow-track" id="garkar-slideshow">
+                  <img src="media/GarKar-1.png" alt="GarKar Screenshot 1" class="slide-image">
+                  <img src="media/GarKar-2.png" alt="GarKar Screenshot 2" class="slide-image">
+                  <img src="media/GarKar-3.png" alt="GarKar Screenshot 3" class="slide-image">
+                  <img src="media/GarKar-4.png" alt="GarKar Screenshot 4" class="slide-image">
+                  <img src="media/GarKar-5.png" alt="GarKar Screenshot 5" class="slide-image">
+                  <img src="media/GarKar-6.png" alt="GarKar Screenshot 6" class="slide-image">
+                  <img src="media/GarKar-7.png" alt="GarKar Screenshot 7" class="slide-image">
+                  <img src="media/GarKar-8.png" alt="GarKar Screenshot 8" class="slide-image">
+                  <img src="media/GarKar-9.png" alt="GarKar Screenshot 9" class="slide-image">
+                  <img src="media/GarKar-10.png" alt="GarKar Screenshot 10" class="slide-image">
+                  <img src="media/GarKar-11.png" alt="GarKar Screenshot 11" class="slide-image">
+                  <img src="media/GarKar-12.png" alt="GarKar Screenshot 12" class="slide-image">
+                  <img src="media/GarKar-13.png" alt="GarKar Screenshot 13" class="slide-image">
+                  <img src="media/GarKar-14.png" alt="GarKar Screenshot 14" class="slide-image">
+                  <img src="media/GarKar-15.png" alt="GarKar Screenshot 15" class="slide-image">
+                  <img src="media/GarKar-16.png" alt="GarKar Screenshot 16" class="slide-image">
+                  <img src="media/GarKar-17.png" alt="GarKar Screenshot 17" class="slide-image">
+                  <img src="media/GarKar-18.png" alt="GarKar Screenshot 18" class="slide-image">
+                </div>
+                <button class="slideshow-btn prev" onclick="moveSlide(-1)">&#8249;</button>
+                <button class="slideshow-btn next" onclick="moveSlide(1)">&#8250;</button>
+                <div class="slideshow-dots" id="slideshow-dots"></div>
+              </div>
             <div class="video-container">
               <video controls class="garkar-video">
                 <source src="media/GarKar-Video.mov" type="video/mp4">
@@ -262,16 +288,46 @@
     function unlockProjects() {
       const passwordInput = document.getElementById('project-password');
       const password = passwordInput.value;
-
-      // Replace with your actual password
       const correctPassword = "anas"; 
 
       if (password === correctPassword) {
+        document.getElementById('project-lock').style.display = 'none';
         document.getElementById('project-content').style.display = 'block';
-        passwordInput.value = ''; // Clear the password field
+        passwordInput.value = '';
+        initSlideshow();
       } else {
         alert("Incorrect password.");
       }
+    }
+
+    // Slideshow logic
+    let currentSlide = 0;
+    const totalSlides = 18;
+
+    function initSlideshow() {
+      const dotsContainer = document.getElementById('slideshow-dots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function moveSlide(direction) {
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      goToSlide(currentSlide);
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      const track = document.getElementById('garkar-slideshow');
+      track.style.transform = `translateX(-${index * 100}%)`;
+      document.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
     }
   </script>
 </body>
