@@ -407,12 +407,13 @@ video:focus {
 }
 
 
-    .slideshow-container {
+  .slideshow-container {
       position: relative;
       width: 100%;
+      max-width: 380px;
+      margin: 16px auto 24px;
       overflow: hidden;
-      margin-top: 16px;
-      border-radius: 8px;
+      border-radius: 12px;
     }
     .slideshow-track {
       display: flex;
@@ -421,9 +422,10 @@ video:focus {
     .slide-image {
       min-width: 100%;
       width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 8px;
+      height: 640px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #f0f0f0;
     }
     .slideshow-btn {
       position: absolute;
