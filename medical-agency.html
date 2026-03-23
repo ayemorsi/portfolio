@@ -83,6 +83,17 @@
           <a class="text-on-surface-variant transition-colors hover:text-clinical-black" href="#approach">Logic</a>
           <a class="text-on-surface-variant transition-colors hover:text-clinical-black" href="#contact">Interface</a>
         </div>
+        <div class="flex items-center gap-3">
+          <button
+            id="login-trigger"
+            class="border border-border-clinical bg-white px-7 py-2.5 text-[11px] font-bold uppercase tracking-widest text-clinical-black transition-all hover:border-clinical-black"
+          >
+            Login
+          </button>
+          <button class="bg-clinical-black px-7 py-2.5 text-[11px] font-bold uppercase tracking-widest text-white transition-all hover:bg-primary hover:text-clinical-black">
+            Contact Specialist
+          </button>
+        </div>
         <button class="bg-clinical-black px-7 py-2.5 text-[11px] font-bold uppercase tracking-widest text-white transition-all hover:bg-primary hover:text-clinical-black">
           Contact Specialist
         </button>
@@ -331,5 +342,25 @@
         </div>
       </div>
     </footer>
+    <script>
+      (function () {
+        const PORTFOLIO_PASSWORD = "anas";
+        const PORTFOLIO_ROUTE = "conventional.html";
+        const loginButton = document.getElementById("login-trigger");
+
+        if (!loginButton) return;
+
+        loginButton.addEventListener("click", function () {
+          const enteredPassword = window.prompt("Enter password to access portfolio:");
+          if (enteredPassword === null) return;
+
+          if (enteredPassword === PORTFOLIO_PASSWORD) {
+            window.location.href = PORTFOLIO_ROUTE;
+          } else {
+            window.alert("Incorrect password.");
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
