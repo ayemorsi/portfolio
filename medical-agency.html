@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AM Design | High-Efficiency Clinical Engineering</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "#ffffff",
+              primary: "#00f5e1",
+              "primary-dark": "#006b63",
+              "clinical-black": "#0a0c10",
+              "clinical-gray": "#f8fafc",
+              "border-clinical": "#e2e8f0",
+              surface: "#ffffff",
+              "on-surface": "#0a0c10",
+              "on-surface-variant": "#475569",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0px",
+              lg: "2px",
+              xl: "4px",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        body {
+          @apply bg-background text-clinical-black;
+        }
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      }
+      .modular-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1px;
+        background-color: theme("colors.border-clinical");
+      }
+      .solution-module {
+        background-color: white;
+        padding: 2.5rem;
+        transition: all 0.2s ease;
+      }
+      .clean-room-border {
+        border: 1px solid theme("colors.border-clinical");
+      }
+    </style>
+  </head>
+  <body class="font-body">
+    <nav class="fixed top-0 z-50 w-full border-b border-border-clinical bg-white/90 backdrop-blur-md">
+      <div class="mx-auto flex max-w-[1440px] items-center justify-between px-10 py-5">
+        <div class="font-headline text-xl font-extrabold tracking-tighter text-clinical-black">
+          AM DESIGN<span class="text-primary">.</span>
+        </div>
+        <div class="hidden items-center gap-10 font-body text-[11px] font-bold uppercase tracking-[0.2em] md:flex">
+          <a class="border-b-2 border-primary text-clinical-black" href="#services">Systems</a>
+          <a class="text-on-surface-variant transition-colors hover:text-clinical-black" href="#portfolio">Log</a>
+          <a class="text-on-surface-variant transition-colors hover:text-clinical-black" href="#approach">Logic</a>
+          <a class="text-on-surface-variant transition-colors hover:text-clinical-black" href="#contact">Interface</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <button
+            id="login-trigger"
+            class="border border-border-clinical bg-white px-7 py-2.5 text-[11px] font-bold uppercase tracking-widest text-clinical-black transition-all hover:border-clinical-black"
+          >
+            Login
+          </button>
+          <button class="bg-clinical-black px-7 py-2.5 text-[11px] font-bold uppercase tracking-widest text-white transition-all hover:bg-primary hover:text-clinical-black">
+            Contact Specialist
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="mx-auto grid max-w-[1440px] items-center gap-20 px-10 pb-24 pt-40 lg:grid-cols-2">
+        <div class="space-y-10">
+          <div class="inline-flex items-center gap-3">
+            <span class="h-[1px] w-8 bg-primary"></span>
+            <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-on-surface-variant">Bespoke, 1-of-1 Digital Solutions</span>
+          </div>
+          <h1 class="font-headline text-6xl font-extrabold leading-[0.95] tracking-tight text-clinical-black lg:text-8xl">
+            Zero Templates.<br />
+            <span class="text-transparent" style="-webkit-text-stroke: 1px #0a0c10">Pure Custom</span><br />
+            <span class="italic text-primary">Engineering.</span>
+          </h1>
+          <p class="max-w-lg text-xl font-light leading-relaxed text-on-surface-variant">
+            Crafted for <span class="font-semibold text-clinical-black">Clinical Excellence</span>, not Mass-Produced. We engineer zero-latency systems from the ground up to match unique clinical environments.
+          </p>
+          <div class="flex flex-wrap gap-6 pt-4">
+            <button class="bg-primary px-10 py-5 text-xs font-bold uppercase tracking-[0.2em] text-clinical-black transition-all hover:bg-clinical-black hover:text-white">Initialize Build</button>
+            <button class="border border-border-clinical px-10 py-5 text-xs font-bold uppercase tracking-[0.2em] text-clinical-black transition-all hover:bg-clinical-gray">View Log</button>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/5] overflow-hidden grayscale contrast-125 transition-all duration-700 hover:grayscale-0">
+            <img
+              class="h-full w-full object-cover"
+              alt="Modern medical professional using a sleek digital tablet interface"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoxdjAI4rUiW9G2HMhWWSnkjD2BWrE2hODsZkUFH_8EvOn2QtwfyWvxWEk3cFLwarGezkS54yuhv3RHGA_U5KPdfWFRi-YosQvIsENYG1EhNRFOuf0OpxCwLKaxXXdbAd74vGy_KdNKFD0dw7tz2UNSoKwCmj4P4AeVc20iGAhzf1Ovut_Dd4nI8pwnUjqV5-SdBpQoFlSpNQp87WevQ63CKdN0_0nl7W5mx-oSpCRnsYZA93zcBvNgHBZ2dUgcH52MHDUCy2Ieso"
+            />
+          </div>
+          <div class="clean-room-border absolute -right-10 top-10 max-w-[280px] bg-white p-8 shadow-2xl">
+            <div class="mb-2 text-[10px] font-bold uppercase tracking-widest text-primary">Protocol 01</div>
+            <div class="mb-4 font-headline text-2xl font-extrabold">100% Unique IP</div>
+            <p class="text-xs leading-relaxed text-on-surface-variant">No shared codebases. Every line is written specifically for your clinical logic.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-y border-border-clinical bg-clinical-gray py-24" id="approach">
+        <div class="mx-auto max-w-[1440px] px-10">
+          <div class="mb-16 flex flex-col items-end justify-between gap-8 md:flex-row">
+            <div>
+              <h2 class="mb-4 font-headline text-4xl font-extrabold uppercase tracking-tight">Optimized Workflow Analysis</h2>
+              <p class="tracking-wide text-on-surface-variant">Quantifying the performance delta between generic templates and bespoke engineering.</p>
+            </div>
+            <div class="bg-clinical-black px-4 py-2 text-[10px] font-bold uppercase tracking-[0.3em] text-primary">Comparative Data</div>
+          </div>
+          <div class="grid gap-10 md:grid-cols-2">
+            <div class="space-y-6">
+              <div class="mb-8 flex items-center gap-4">
+                <span class="text-4xl font-black italic text-clinical-black/20">LOW</span>
+                <div class="h-[1px] flex-grow bg-border-clinical"></div>
+                <span class="text-[11px] font-bold uppercase tracking-widest opacity-50">Template-Based Systems</span>
+              </div>
+              <div class="space-y-4 border border-border-clinical bg-white p-8">
+                <span class="material-symbols-outlined text-red-500">warning</span>
+                <h4 class="text-sm font-bold uppercase tracking-widest">Efficiency Leakage</h4>
+                <p class="text-sm font-light text-on-surface-variant">Generic UI structures force clinicians to adapt to the software, rather than the software adapting to the life-saving workflow.</p>
+              </div>
+              <div class="space-y-4 border border-border-clinical bg-white p-8 opacity-70">
+                <span class="material-symbols-outlined text-red-500">speed</span>
+                <h4 class="text-sm font-bold uppercase tracking-widest">Protocol Latency</h4>
+                <p class="text-sm font-light text-on-surface-variant">Bloated third-party libraries and unoptimized themes introduce critical millisecond delays in patient data retrieval.</p>
+              </div>
+            </div>
+            <div class="space-y-6">
+              <div class="mb-8 flex items-center gap-4">
+                <span class="text-4xl font-black italic text-primary">HIGH</span>
+                <div class="h-[1px] flex-grow bg-primary/30"></div>
+                <span class="text-[11px] font-bold uppercase tracking-widest text-primary">AM Design Bespoke</span>
+              </div>
+              <div class="space-y-4 border-l-4 border-primary bg-white p-8 shadow-xl">
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">bolt</span>
+                <h4 class="text-sm font-bold uppercase tracking-widest">Zero-Latency Systems</h4>
+                <p class="text-sm font-light leading-relaxed text-on-surface-variant">Engineered with a minimalist tech stack focused solely on high-speed data delivery and instant clinical response times.</p>
+              </div>
+              <div class="space-y-4 border-l-4 border-primary bg-white p-8 shadow-xl">
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">precision_manufacturing</span>
+                <h4 class="text-sm font-bold uppercase tracking-widest">1-of-1 Workflow Architecture</h4>
+                <p class="text-sm font-light leading-relaxed text-on-surface-variant">Interfaces built from scratch around the specific eye-tracking and interaction patterns of specialized medical practitioners.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-[1440px] px-10 py-32" id="services">
+        <div class="mb-24 text-center">
+          <h2 class="mb-6 font-headline text-5xl font-extrabold uppercase tracking-tighter">Core Solutions</h2>
+          <div class="mx-auto h-1 w-12 bg-primary"></div>
+        </div>
+        <div class="modular-grid border-l border-t border-border-clinical">
+          <div class="solution-module group transition-colors hover:bg-primary">
+            <div class="mb-12"><span class="material-symbols-outlined text-4xl transition-colors group-hover:text-clinical-black">architecture</span></div>
+            <h3 class="mb-4 font-headline text-xl font-extrabold uppercase group-hover:text-clinical-black">Custom UI Logic</h3>
+            <p class="mb-8 text-sm font-light text-on-surface-variant group-hover:text-clinical-black/80">Proprietary interface systems designed to eliminate cognitive friction in high-stress environments.</p>
+            <div class="border-t border-border-clinical pt-6 text-[10px] font-bold uppercase tracking-widest group-hover:border-clinical-black/20">Module 01: Experience</div>
+          </div>
+          <div class="solution-module group transition-colors hover:bg-primary">
+            <div class="mb-12"><span class="material-symbols-outlined text-4xl transition-colors group-hover:text-clinical-black">terminal</span></div>
+            <h3 class="mb-4 font-headline text-xl font-extrabold uppercase group-hover:text-clinical-black">Full-Stack Engineering</h3>
+            <p class="mb-8 text-sm font-light text-on-surface-variant group-hover:text-clinical-black/80">Ground-up development of telehealth and RPM hubs without the use of template engines or CMS bloat.</p>
+            <div class="border-t border-border-clinical pt-6 text-[10px] font-bold uppercase tracking-widest group-hover:border-clinical-black/20">Module 02: Infrastructure</div>
+          </div>
+          <div class="solution-module group transition-colors hover:bg-primary">
+            <div class="mb-12"><span class="material-symbols-outlined text-4xl transition-colors group-hover:text-clinical-black">enhanced_encryption</span></div>
+            <h3 class="mb-4 font-headline text-xl font-extrabold uppercase group-hover:text-clinical-black">Bio-Security Protocols</h3>
+            <p class="mb-8 text-sm font-light text-on-surface-variant group-hover:text-clinical-black/80">Bespoke encryption and compliance layers integrated directly into the system's core technical architecture.</p>
+            <div class="border-t border-border-clinical pt-6 text-[10px] font-bold uppercase tracking-widest group-hover:border-clinical-black/20">Module 03: Security</div>
+          </div>
+          <div class="solution-module group transition-colors hover:bg-primary">
+            <div class="mb-12"><span class="material-symbols-outlined text-4xl transition-colors group-hover:text-clinical-black">sync_alt</span></div>
+            <h3 class="mb-4 font-headline text-xl font-extrabold uppercase group-hover:text-clinical-black">Zero-Latency API</h3>
+            <p class="mb-8 text-sm font-light text-on-surface-variant group-hover:text-clinical-black/80">High-performance data bridges for legacy hospital systems, ensuring real-time synchronization.</p>
+            <div class="border-t border-border-clinical pt-6 text-[10px] font-bold uppercase tracking-widest group-hover:border-clinical-black/20">Module 04: Integration</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white py-32" id="portfolio">
+        <div class="mx-auto max-w-[1440px] px-10">
+          <div class="mb-20 flex items-center gap-10">
+            <h2 class="whitespace-nowrap font-headline text-4xl font-extrabold uppercase tracking-tighter">Clinical Archive</h2>
+            <div class="h-[1px] w-full bg-border-clinical"></div>
+          </div>
+          <div class="grid gap-1 bg-border-clinical px-1 md:grid-cols-2">
+            <div class="group bg-white p-12">
+              <div class="mb-10 aspect-video overflow-hidden grayscale transition-all duration-500 hover:grayscale-0">
+                <img class="h-full w-full object-cover transition-transform group-hover:scale-105" alt="Dashboard interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnJ3O700sIa3xqysgdMpU1A5acOJomppYP4hd_HmXmE1S-ww2DJh7SAeMOfxYT-tscWDIODrwkKmYK8xe7fK4wA13brM4AfdSX5zHx7Ei04aXButoc_gRzK7yyzOJdggNFqWBl4s6rqwXfLmHvjX1yKCdTtA1TZEmMpmHggtYy0mf_hOEvPdaSLaIj880Y5la4J2A1tVPQ9SQK-yBjJc4h6t79bI9UWFROxKpTHhD9ehZ4ULGJeaqmr0WEAgCivHyp3qZv9OO6j6o" />
+              </div>
+              <div class="flex items-start justify-between">
+                <div>
+                  <h4 class="mb-2 font-headline text-2xl font-black uppercase">
+                    <a
+                      class="transition-colors hover:text-primary"
+                      href="https://www.genentassociates.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Genesee ENT Associates
+                    </a>
+                  </h4>
+                  <p class="text-sm font-light text-on-surface-variant">Otolaryngology care group website and patient-facing experience.</p>
+                </div>
+                <span class="text-[10px] font-bold tracking-widest text-primary">BUILD_082</span>
+              </div>
+            </div>
+            <div class="group bg-white p-12">
+              <div class="mb-10 aspect-video overflow-hidden grayscale transition-all duration-500 hover:grayscale-0">
+                <img class="h-full w-full object-cover transition-transform group-hover:scale-105" alt="Mobile app" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuJfGok8RLN5j4vOT0FQBtie1k9DogQOWeCODNa8sIHkAVSwI0moItyAQdPP94ToHQSKxiPjKTYR6eLZk567yt7PcWYKece5JOPxwBivUcIyEyWWxNPYRW15AD8Tg4WhVqsia2c7RS8rG0v-T5KNHrv4uTh5CXWBtaUvXu3iYzOvG21xydswxO-Ghc6ZvUxTKyWSOu44mvNW7LFn1aoynrkZcy_xFSH61LbFzYNSBPz5CnxL_1bEz16Xo8qSGYnBzV78y6VY2W96c" />
+              </div>
+              <div class="flex items-start justify-between">
+                <div>
+                  <h4 class="mb-2 font-headline text-2xl font-black uppercase">Psych Clinic (Coming Soon)</h4>
+                  <p class="text-sm font-light text-on-surface-variant">Upcoming psychiatry practice website and digital patient intake flow.</p>
+                </div>
+                <span class="text-[10px] font-bold tracking-widest text-primary">BUILD_104</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-clinical-black px-10 py-32 text-center text-white">
+        <div class="mx-auto max-w-4xl space-y-12">
+          <span class="material-symbols-outlined text-6xl text-primary">format_quote</span>
+          <h2 class="font-headline text-4xl font-extrabold italic leading-tight tracking-tight lg:text-5xl">
+            "AM Design doesn't just build websites; they build 1-of-1 digital ecosystems. Their refusal to use templates is what makes them indispensable."
+          </h2>
+          <div class="flex flex-col items-center gap-4">
+            <img
+              class="h-16 w-16 rounded-full border-2 border-primary object-cover"
+              alt="Portrait of Dr. Kareem Shukairy"
+              src="/Media/drkareemshukairy.jpg"
+            />
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest">Dr. Kareem Shukairy</div>
+              <div class="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Otolaryngology, Head &amp; Neck Surgery</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white px-10 py-32" id="contact">
+        <div class="mx-auto max-w-[1440px] border-4 border-clinical-black">
+          <div class="flex flex-col lg:flex-row">
+            <div class="flex flex-col justify-between bg-clinical-black p-16 text-white lg:w-2/5">
+              <div>
+                <h2 class="mb-8 font-headline text-5xl font-extrabold uppercase leading-none tracking-tighter">Initiate<br />Protocol<span class="text-primary">.</span></h2>
+                <p class="mb-12 text-lg font-light text-on-surface-variant">
+                  Ready for a 1-of-1 solution? Define your clinical requirements. We do not offer template demos. We build systems.
+                </p>
+              </div>
+              <div class="space-y-6">
+                <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest"><span class="text-primary">E:</span> contact@anasmorsi.com</div>
+                <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest"><span class="text-primary">L:</span> Remote, MI</div>
+              </div>
+            </div>
+            <div class="p-16 lg:w-3/5">
+              <form
+                id="inquiry-form"
+                class="space-y-12"
+              >
+                <div class="grid gap-12 md:grid-cols-2">
+                  <div class="border-b-2 border-border-clinical transition-colors focus-within:border-primary">
+                    <label class="mb-2 block text-[10px] font-black uppercase tracking-[0.3em] text-clinical-black">Specialist Name</label>
+                    <input
+                      class="w-full border-none bg-transparent px-0 py-2 font-medium text-clinical-black focus:ring-0"
+                      name="specialist_name"
+                      placeholder="REQUIRED"
+                      type="text"
+                      required
+                    />
+                  </div>
+                  <div class="border-b-2 border-border-clinical transition-colors focus-within:border-primary">
+                    <label class="mb-2 block text-[10px] font-black uppercase tracking-[0.3em] text-clinical-black">Endpoint Email</label>
+                    <input
+                      class="w-full border-none bg-transparent px-0 py-2 font-medium text-clinical-black focus:ring-0"
+                      name="endpoint_email"
+                      placeholder="REQUIRED"
+                      type="email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="border-b-2 border-border-clinical transition-colors focus-within:border-primary">
+                  <label class="mb-2 block text-[10px] font-black uppercase tracking-[0.3em] text-clinical-black">Technical Workflow Definition</label>
+                  <textarea
+                    class="w-full resize-none border-none bg-transparent px-0 py-2 font-medium text-clinical-black focus:ring-0"
+                    name="technical_workflow_definition"
+                    placeholder="DESCRIBE UNIQUE CLINICAL PARAMETERS..."
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+                <button
+                  class="w-full bg-primary py-6 text-xs font-black uppercase tracking-[0.4em] text-clinical-black transition-all hover:bg-clinical-black hover:text-white"
+                  type="submit"
+                >
+                  Submit Engineering Request
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-border-clinical bg-white px-10 py-20">
+      <div class="mx-auto grid max-w-[1440px] grid-cols-2 gap-16 lg:grid-cols-4">
+        <div>
+          <div class="mb-6 text-xl font-black uppercase tracking-tighter">AM DESIGN</div>
+          <p class="text-[10px] font-bold uppercase leading-loose tracking-[0.2em] text-on-surface-variant">
+            © 2026 AM Design.<br />1-of-1 Healthcare Engineering.<br />Clinical Innovator Persona Alpha.
+          </p>
+        </div>
+        <div>
+          <h5 class="mb-8 text-[11px] font-black uppercase tracking-[0.3em]">System</h5>
+          <ul class="space-y-4 text-[11px] font-bold uppercase tracking-widest text-on-surface-variant">
+            <li class="cursor-pointer transition-colors hover:text-primary">UI Logic</li>
+            <li class="cursor-pointer transition-colors hover:text-primary">Core Systems</li>
+            <li class="cursor-pointer transition-colors hover:text-primary">Security Hub</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="mb-8 text-[11px] font-black uppercase tracking-[0.3em]">Registry</h5>
+          <ul class="space-y-4 text-[11px] font-bold uppercase tracking-widest text-on-surface-variant">
+            <li class="cursor-pointer transition-colors hover:text-primary">Case Logs</li>
+            <li class="cursor-pointer transition-colors hover:text-primary">Logic Lab</li>
+            <li class="cursor-pointer transition-colors hover:text-primary">Performance</li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="mb-8 text-[11px] font-black uppercase tracking-[0.3em]">Uptime</h5>
+          <ul class="space-y-4 text-[11px] font-bold uppercase tracking-widest text-on-surface-variant">
+            <li class="cursor-pointer transition-colors hover:text-primary">LinkedIn</li>
+            <li class="cursor-pointer transition-colors hover:text-primary">Terminal</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        const PORTFOLIO_PASSWORD = "anas";
+        const PORTFOLIO_ROUTE = "conventional.html";
+        const INQUIRY_EMAIL = "contact@anasmorsi.com";
+        const INQUIRY_ENDPOINT = `https://formsubmit.co/ajax/${INQUIRY_EMAIL}`;
+        const loginButton = document.getElementById("login-trigger");
+        const inquiryForm = document.getElementById("inquiry-form");
+
+        if (!loginButton) return;
+
+        loginButton.addEventListener("click", function () {
+          const enteredPassword = window.prompt("Enter password to access portfolio:");
+          if (enteredPassword === null) return;
+
+          if (enteredPassword === PORTFOLIO_PASSWORD) {
+            window.location.href = PORTFOLIO_ROUTE;
+          } else {
+            window.alert("Incorrect password.");
+          }
+        });
+
+        if (inquiryForm) {
+          inquiryForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (!inquiryForm.checkValidity()) {
+              inquiryForm.reportValidity();
+              return;
+            }
+
+            const specialistName = inquiryForm.elements.namedItem("specialist_name")?.value?.trim() || "";
+            const endpointEmail = inquiryForm.elements.namedItem("endpoint_email")?.value?.trim() || "";
+            const workflow = inquiryForm.elements.namedItem("technical_workflow_definition")?.value?.trim() || "";
+            const submitButton = inquiryForm.querySelector('button[type="submit"]');
+            const originalButtonLabel = submitButton?.textContent;
+
+            if (submitButton) {
+              submitButton.disabled = true;
+              submitButton.textContent = "Sending...";
+            }
+
+            const payload = new FormData();
+            payload.append("specialist_name", specialistName);
+            payload.append("endpoint_email", endpointEmail);
+            payload.append("technical_workflow_definition", workflow);
+            payload.append("_subject", `New AM Design Inquiry from ${specialistName || "Website Visitor"}`);
+            payload.append("_captcha", "false");
+            payload.append("_template", "table");
+
+            fetch(INQUIRY_ENDPOINT, {
+              method: "POST",
+              body: payload,
+              headers: {
+                Accept: "application/json",
+              },
+            })
+              .then(async function (response) {
+                const data = await response.json().catch(function () {
+                  return {};
+                });
+
+                if (!response.ok) {
+                  throw new Error(data?.message || "Unable to send inquiry right now.");
+                }
+
+                inquiryForm.reset();
+                window.alert("Inquiry sent successfully. We will reach out soon.");
+              })
+              .catch(function (error) {
+                console.error(error);
+                window.alert("Unable to send right now. Please email contact@anasmorsi.com directly.");
+              })
+              .finally(function () {
+                if (submitButton) {
+                  submitButton.disabled = false;
+                  submitButton.textContent = originalButtonLabel || "Submit Engineering Request";
+                }
+              });
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
