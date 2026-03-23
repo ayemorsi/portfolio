@@ -277,27 +277,53 @@
                 </p>
               </div>
               <div class="space-y-6">
-                <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest"><span class="text-primary">E:</span> bespoke@amdesign.com</div>
+                <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest"><span class="text-primary">E:</span> contact@anasmorsi.com</div>
                 <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest"><span class="text-primary">L:</span> Remote, MI</div>
               </div>
             </div>
             <div class="p-16 lg:w-3/5">
-              <form class="space-y-12">
+              <form
+                class="space-y-12"
+                action="mailto:contact@anasmorsi.com"
+                method="post"
+                enctype="text/plain"
+              >
                 <div class="grid gap-12 md:grid-cols-2">
                   <div class="border-b-2 border-border-clinical transition-colors focus-within:border-primary">
                     <label class="mb-2 block text-[10px] font-black uppercase tracking-[0.3em] text-clinical-black">Specialist Name</label>
-                    <input class="w-full border-none bg-transparent px-0 py-2 font-medium text-clinical-black focus:ring-0" placeholder="REQUIRED" type="text" />
+                    <input
+                      class="w-full border-none bg-transparent px-0 py-2 font-medium text-clinical-black focus:ring-0"
+                      name="specialist_name"
+                      placeholder="REQUIRED"
+                      type="text"
+                      required
+                    />
                   </div>
                   <div class="border-b-2 border-border-clinical transition-colors focus-within:border-primary">
                     <label class="mb-2 block text-[10px] font-black uppercase tracking-[0.3em] text-clinical-black">Endpoint Email</label>
-                    <input class="w-full border-none bg-transparent px-0 py-2 font-medium text-clinical-black focus:ring-0" placeholder="REQUIRED" type="email" />
+                    <input
+                      class="w-full border-none bg-transparent px-0 py-2 font-medium text-clinical-black focus:ring-0"
+                      name="endpoint_email"
+                      placeholder="REQUIRED"
+                      type="email"
+                      required
+                    />
                   </div>
                 </div>
                 <div class="border-b-2 border-border-clinical transition-colors focus-within:border-primary">
                   <label class="mb-2 block text-[10px] font-black uppercase tracking-[0.3em] text-clinical-black">Technical Workflow Definition</label>
-                  <textarea class="w-full resize-none border-none bg-transparent px-0 py-2 font-medium text-clinical-black focus:ring-0" placeholder="DESCRIBE UNIQUE CLINICAL PARAMETERS..." rows="3"></textarea>
+                  <textarea
+                    class="w-full resize-none border-none bg-transparent px-0 py-2 font-medium text-clinical-black focus:ring-0"
+                    name="technical_workflow_definition"
+                    placeholder="DESCRIBE UNIQUE CLINICAL PARAMETERS..."
+                    rows="3"
+                    required
+                  ></textarea>
                 </div>
-                <button class="w-full bg-primary py-6 text-xs font-black uppercase tracking-[0.4em] text-clinical-black transition-all hover:bg-clinical-black hover:text-white">
+                <button
+                  class="w-full bg-primary py-6 text-xs font-black uppercase tracking-[0.4em] text-clinical-black transition-all hover:bg-clinical-black hover:text-white"
+                  type="submit"
+                >
                   Submit Engineering Request
                 </button>
               </form>
