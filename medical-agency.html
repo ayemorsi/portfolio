@@ -368,6 +368,7 @@
         const PORTFOLIO_PASSWORD = "anas";
         const PORTFOLIO_ROUTE = "conventional.html";
         const INQUIRY_EMAIL = "contact@anasmorsi.com";
+        const INQUIRY_ENDPOINT = `https://formsubmit.co/ajax/${INQUIRY_EMAIL}`;
         const loginButton = document.getElementById("login-trigger");
         const inquiryForm = document.getElementById("inquiry-form");
 
@@ -396,13 +397,51 @@
             const specialistName = inquiryForm.elements.namedItem("specialist_name")?.value?.trim() || "";
             const endpointEmail = inquiryForm.elements.namedItem("endpoint_email")?.value?.trim() || "";
             const workflow = inquiryForm.elements.namedItem("technical_workflow_definition")?.value?.trim() || "";
+            const submitButton = inquiryForm.querySelector('button[type="submit"]');
+            const originalButtonLabel = submitButton?.textContent;
 
-            const subject = encodeURIComponent(`New AM Design Inquiry from ${specialistName || "Website Visitor"}`);
-            const body = encodeURIComponent(
-              `Specialist Name: ${specialistName}\nEndpoint Email: ${endpointEmail}\n\nTechnical Workflow Definition:\n${workflow}`
-            );
+            if (submitButton) {
+              submitButton.disabled = true;
+              submitButton.textContent = "Sending...";
+            }
 
-            window.location.href = `mailto:${INQUIRY_EMAIL}?subject=${subject}&body=${body}`;
+            const payload = new FormData();
+            payload.append("specialist_name", specialistName);
+            payload.append("endpoint_email", endpointEmail);
+            payload.append("technical_workflow_definition", workflow);
+            payload.append("_subject", `New AM Design Inquiry from ${specialistName || "Website Visitor"}`);
+            payload.append("_captcha", "false");
+            payload.append("_template", "table");
+
+            fetch(INQUIRY_ENDPOINT, {
+              method: "POST",
+              body: payload,
+              headers: {
+                Accept: "application/json",
+              },
+            })
+              .then(async function (response) {
+                const data = await response.json().catch(function () {
+                  return {};
+                });
+
+                if (!response.ok) {
+                  throw new Error(data?.message || "Unable to send inquiry right now.");
+                }
+
+                inquiryForm.reset();
+                window.alert("Inquiry sent successfully. We will reach out soon.");
+              })
+              .catch(function (error) {
+                console.error(error);
+                window.alert("Unable to send right now. Please email contact@anasmorsi.com directly.");
+              })
+              .finally(function () {
+                if (submitButton) {
+                  submitButton.disabled = false;
+                  submitButton.textContent = originalButtonLabel || "Submit Engineering Request";
+                }
+              });
           });
         }
       })();
