@@ -94,7 +94,6 @@
             Contact Specialist
           </button>
         </div>
-       
       </div>
     </nav>
 
@@ -278,15 +277,13 @@
               </div>
               <div class="space-y-6">
                 <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest"><span class="text-primary">E:</span> contact@anasmorsi.com</div>
-                <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest"><span class="text-primary">L:</span> Remote, MI</div>
+                <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest"><span class="text-primary">L:</span> Palo Alto, CA</div>
               </div>
             </div>
             <div class="p-16 lg:w-3/5">
               <form
+                id="inquiry-form"
                 class="space-y-12"
-                action="mailto:contact@anasmorsi.com"
-                method="post"
-                enctype="text/plain"
               >
                 <div class="grid gap-12 md:grid-cols-2">
                   <div class="border-b-2 border-border-clinical transition-colors focus-within:border-primary">
@@ -370,7 +367,9 @@
       (function () {
         const PORTFOLIO_PASSWORD = "anas";
         const PORTFOLIO_ROUTE = "conventional.html";
+        const INQUIRY_EMAIL = "contact@anasmorsi.com";
         const loginButton = document.getElementById("login-trigger");
+        const inquiryForm = document.getElementById("inquiry-form");
 
         if (!loginButton) return;
 
@@ -384,6 +383,28 @@
             window.alert("Incorrect password.");
           }
         });
+
+        if (inquiryForm) {
+          inquiryForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (!inquiryForm.checkValidity()) {
+              inquiryForm.reportValidity();
+              return;
+            }
+
+            const specialistName = inquiryForm.elements.namedItem("specialist_name")?.value?.trim() || "";
+            const endpointEmail = inquiryForm.elements.namedItem("endpoint_email")?.value?.trim() || "";
+            const workflow = inquiryForm.elements.namedItem("technical_workflow_definition")?.value?.trim() || "";
+
+            const subject = encodeURIComponent(`New AM Design Inquiry from ${specialistName || "Website Visitor"}`);
+            const body = encodeURIComponent(
+              `Specialist Name: ${specialistName}\nEndpoint Email: ${endpointEmail}\n\nTechnical Workflow Definition:\n${workflow}`
+            );
+
+            window.location.href = `mailto:${INQUIRY_EMAIL}?subject=${subject}&body=${body}`;
+          });
+        }
       })();
     </script>
   </body>
