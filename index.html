@@ -1,18 +1,651 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AM Design</title>
-    <meta http-equiv="refresh" content="0; url=medical-agency.html" />
-    <script>
-      window.location.replace("medical-agency.html");
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Anas Morsi | AI-Native UX Leader &amp; Full-Stack Experience Architect</title>
+    <meta name="description" content="Anas Morsi — AI-native UX leader and full-stack experience architect. Bloomberg Law, IRS/Salesforce, and independent AI-accelerated builds (GarKar, Zaytoon)." />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "#07080b",
+              surface: "#111319",
+              "surface-alt": "#171a21",
+              primary: "#00f5e1",
+              "primary-dark": "#006b63",
+              border: "#22262f",
+              "on-surface": "#f5f7fa",
+              "on-surface-variant": "#8b93a1",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0px",
+              lg: "2px",
+              xl: "4px",
+              full: "9999px",
+            },
+          },
+        },
+      };
     </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        body {
+          @apply bg-background text-on-surface;
+        }
+      }
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+      }
+      .chip {
+        @apply border border-border bg-surface px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant;
+      }
+      .section-eyebrow {
+        @apply inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.3em] text-on-surface-variant;
+      }
+      .timeline-item {
+        position: relative;
+        padding-left: 2rem;
+        border-left: 1px solid #22262f;
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -5px;
+        top: 0.4rem;
+        width: 9px;
+        height: 9px;
+        background: #00f5e1;
+      }
+      .slideshow-track {
+        display: flex;
+        transition: transform 0.4s ease;
+      }
+      .slide-image {
+        width: 100%;
+        flex-shrink: 0;
+        object-fit: cover;
+        aspect-ratio: 16/10;
+      }
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 9999px;
+        background: #22262f;
+        cursor: pointer;
+      }
+      .dot.active {
+        background: #00f5e1;
+      }
+    </style>
   </head>
-  <body>
-    <p>
-      Redirecting to AM Design landing page...
-      <a href="medical-agency.html">Click here if you are not redirected.</a>
-    </p>
+  <body class="font-body overflow-x-hidden">
+    <!-- NAV -->
+    <nav class="fixed top-0 z-50 w-full border-b border-border bg-background/90 backdrop-blur-md">
+      <div class="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-10">
+        <a href="#top" class="font-headline text-xl font-extrabold tracking-tighter">
+          ANAS MORSI<span class="text-primary">.</span>
+        </a>
+        <div class="hidden items-center gap-8 font-body text-[11px] font-bold uppercase tracking-[0.2em] md:flex">
+          <a class="text-on-surface-variant transition-colors hover:text-primary" href="#about">About</a>
+          <a class="text-on-surface-variant transition-colors hover:text-primary" href="#experience">Experience</a>
+          <a class="text-on-surface-variant transition-colors hover:text-primary" href="#projects">Projects</a>
+          <a class="text-on-surface-variant transition-colors hover:text-primary" href="#case-studies">Case Studies</a>
+          <a class="text-on-surface-variant transition-colors hover:text-primary" href="#contact">Contact</a>
+        </div>
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a
+            href="media/Anas_Morsi_Resume_2026.docx"
+            class="hidden border border-border bg-surface px-4 py-2 text-[10px] font-bold uppercase tracking-widest transition-all hover:border-primary hover:text-primary sm:inline-flex sm:px-6 sm:py-2.5 sm:text-[11px]"
+          >
+            Resume
+          </a>
+          <a href="#contact" class="bg-primary px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-background transition-all hover:bg-white sm:px-7 sm:py-2.5 sm:text-[11px]">
+            Contact
+          </a>
+          <button id="menu-trigger" class="text-on-surface md:hidden" aria-label="Toggle menu">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="hidden flex-col gap-1 border-t border-border bg-background px-4 py-4 text-[11px] font-bold uppercase tracking-widest md:hidden">
+        <a class="py-2 text-on-surface-variant hover:text-primary" href="#about">About</a>
+        <a class="py-2 text-on-surface-variant hover:text-primary" href="#experience">Experience</a>
+        <a class="py-2 text-on-surface-variant hover:text-primary" href="#projects">Projects</a>
+        <a class="py-2 text-on-surface-variant hover:text-primary" href="#case-studies">Case Studies</a>
+        <a class="py-2 text-on-surface-variant hover:text-primary" href="#contact">Contact</a>
+        <a class="py-2 text-primary" href="media/Anas_Morsi_Resume_2026.docx">Download Resume</a>
+      </div>
+    </nav>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="mx-auto grid max-w-[1440px] items-center gap-12 px-4 pb-20 pt-32 sm:px-6 lg:gap-16 lg:px-10 lg:pb-28 lg:pt-44 lg:grid-cols-[3fr_2fr]">
+        <div class="space-y-8">
+          <div class="section-eyebrow">
+            <span class="h-[1px] w-8 bg-primary"></span>
+            AI-Native UX Leader &amp; Full-Stack Experience Architect
+          </div>
+          <h1 class="font-headline text-4xl font-extrabold leading-[1.02] tracking-tight sm:text-6xl lg:text-7xl">
+            Anas Morsi
+          </h1>
+          <p class="max-w-xl text-base font-light leading-relaxed text-on-surface-variant sm:text-lg">
+            For a decade I've done what typically takes two hires: UX design and front-end development. AI-assisted development now extends that reach across product strategy and full-stack implementation, letting me ship complete products on my own. I built Bloomberg Law's Innovation Studio and its first AI legal chat, currently lead UX for U.S. federal (IRS) modernization on the Salesforce platform, and build my own full-stack products (GarKar, Zaytoon) to test new AI development workflows.
+          </p>
+          <div class="flex flex-wrap gap-4 pt-2">
+            <a href="#projects" class="bg-primary px-6 py-4 text-xs font-bold uppercase tracking-[0.2em] text-background transition-all hover:bg-white sm:px-8 sm:py-5">View Projects</a>
+            <a href="media/Anas_Morsi_Resume_2026.docx" class="border border-border px-6 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-all hover:border-primary hover:text-primary sm:px-8 sm:py-5">Download Resume</a>
+          </div>
+          <div class="flex flex-wrap items-center gap-6 pt-2 text-xs font-semibold uppercase tracking-widest text-on-surface-variant">
+            <a class="flex items-center gap-2 transition-colors hover:text-primary" href="mailto:contact@anasmorsi.com">
+              <span class="material-symbols-outlined text-base">mail</span> contact@anasmorsi.com
+            </a>
+            <a class="flex items-center gap-2 transition-colors hover:text-primary" href="https://www.linkedin.com/in/anas-morsi/" target="_blank" rel="noopener">
+              <span class="material-symbols-outlined text-base">link</span> LinkedIn
+            </a>
+            <a class="flex items-center gap-2 transition-colors hover:text-primary" href="tel:+18102825910">
+              <span class="material-symbols-outlined text-base">call</span> (810) 282-5910
+            </a>
+          </div>
+        </div>
+        <div class="border border-border bg-surface p-8 sm:p-10">
+          <div class="mb-8 text-[10px] font-black uppercase tracking-[0.3em] text-primary">Now</div>
+          <ul class="space-y-6 text-sm text-on-surface-variant">
+            <li class="flex justify-between gap-4"><span class="font-semibold text-on-surface">Lead Experience Architect</span><span>Salesforce</span></li>
+            <li>Leading UX for U.S. federal (IRS) modernization on the Salesforce platform.</li>
+          </ul>
+          <div class="my-8 h-px bg-border"></div>
+          <div class="mb-4 text-[10px] font-black uppercase tracking-[0.3em] text-primary">Building</div>
+          <ul class="space-y-3 text-sm text-on-surface-variant">
+            <li><span class="font-semibold text-on-surface">GarKar</span> — vehicle marketplace</li>
+            <li><span class="font-semibold text-on-surface">Zaytoon</span> — round-up charitable giving, iOS</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="border-t border-border bg-surface px-4 py-20 sm:px-6 sm:py-24 lg:px-10">
+        <div class="mx-auto max-w-[1440px]">
+          <div class="section-eyebrow mb-6"><span>#1</span> About</div>
+          <div class="grid gap-16 lg:grid-cols-[2fr_3fr]">
+            <h2 class="font-headline text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">
+              Human-AI Interaction Design, at enterprise scale and solo speed.
+            </h2>
+            <div class="space-y-10">
+              <p class="max-w-2xl text-base leading-relaxed text-on-surface-variant">
+                Core competencies span human-AI interaction design, AI-assisted / agentic development, user-centered design, UX research &amp; testing, design strategy &amp; vision, team leadership &amp; mentorship, design systems &amp; frameworks, public-sector / government UX, accessibility (Section 508 / WCAG), full-stack front-end development, brand identity development, lean UX &amp; agile, and data-informed design.
+              </p>
+              <div>
+                <div class="mb-4 text-[10px] font-black uppercase tracking-[0.3em] text-on-surface-variant">Languages</div>
+                <div class="flex flex-wrap gap-3">
+                  <span class="chip">English — Fluent</span>
+                  <span class="chip">Arabic — Fluent</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <div class="mb-3 text-[10px] font-black uppercase tracking-[0.3em] text-primary">AI Tools</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="chip">Claude Code</span>
+                <span class="chip">Agentic SDLC</span>
+                <span class="chip">AI Prototyping</span>
+                <span class="chip">LLM Product Design</span>
+              </div>
+            </div>
+            <div>
+              <div class="mb-3 text-[10px] font-black uppercase tracking-[0.3em] text-primary">Design &amp; Tools</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="chip">Figma</span>
+                <span class="chip">Adobe XD</span>
+                <span class="chip">Photoshop</span>
+                <span class="chip">Illustrator</span>
+                <span class="chip">Sketch</span>
+                <span class="chip">InVision</span>
+              </div>
+            </div>
+            <div>
+              <div class="mb-3 text-[10px] font-black uppercase tracking-[0.3em] text-primary">Platforms &amp; Methods</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="chip">Salesforce SLDS</span>
+                <span class="chip">Wireframing</span>
+                <span class="chip">Usability Testing</span>
+                <span class="chip">A/B Testing</span>
+                <span class="chip">Card Sorting</span>
+              </div>
+            </div>
+            <div>
+              <div class="mb-3 text-[10px] font-black uppercase tracking-[0.3em] text-primary">Tech Stack</div>
+              <div class="flex flex-wrap gap-2">
+                <span class="chip">React</span>
+                <span class="chip">React Native</span>
+                <span class="chip">Next.js</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">Node.js</span>
+                <span class="chip">Express</span>
+                <span class="chip">MongoDB</span>
+                <span class="chip">Stripe</span>
+                <span class="chip">Plaid</span>
+                <span class="chip">Python / Django</span>
+                <span class="chip">WordPress</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="px-4 py-20 sm:px-6 sm:py-24 lg:px-10">
+        <div class="mx-auto max-w-[1440px]">
+          <div class="section-eyebrow mb-6"><span>#2</span> Experience</div>
+          <h2 class="mb-16 font-headline text-3xl font-extrabold tracking-tight sm:text-4xl">Where the work happened.</h2>
+
+          <div class="space-y-14">
+            <div class="timeline-item">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="font-headline text-xl font-bold">Lead Experience Architect</h3>
+                <span class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant">Sept 2024 – Present</span>
+              </div>
+              <div class="mb-4 text-sm font-semibold text-primary">Salesforce, Remote</div>
+              <ul class="list-disc space-y-2 pl-4 text-sm leading-relaxed text-on-surface-variant marker:text-primary">
+                <li>Lead UX teams delivering enterprise tools for the U.S. Internal Revenue Service (IRS), including TP360, a customer-service-representative platform used by IRS agents to manage taxpayer interactions.</li>
+                <li>Architect end-to-end experiences on the Salesforce platform for federal public-sector programs, translating complex compliance and policy requirements into intuitive, accessible interfaces.</li>
+                <li>Designed secure disclosure and authentication flows, including third-party designee (TPD) authentication, delivered as React components styled to the SLDS/TP360 design system.</li>
+                <li>Use AI tools to accelerate the design-to-build pipeline: translating low-fidelity wireframes into interactive, code-accurate React prototypes that engineering can implement directly.</li>
+                <li>Direct and mentor UX designers, set design direction and standards, and champion Section 508 accessibility across all deliverables.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="font-headline text-xl font-bold">Senior UX Architect</h3>
+                <span class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant">Jan 2023 – Sept 2024</span>
+              </div>
+              <div class="mb-4 text-sm font-semibold text-primary">Bloomberg, Arlington, VA</div>
+              <ul class="list-disc space-y-2 pl-4 text-sm leading-relaxed text-on-surface-variant marker:text-primary">
+                <li>Led AI product design for Bloomberg Law, building the Innovation Studio from scratch — later adopted by Bloomberg Government (BGOV) and Bloomberg Tax (BTAX).</li>
+                <li>Led research and design for Bloomberg Law's generative AI experience as LexisNexis and Westlaw raced to ship conversational legal research.</li>
+                <li>Advised executives against a chat-first replacement of the 15-year-old platform; redesigned around the existing search workflow instead — an AI answer with supporting sources and citations, followed by a grounded "Start Chat" option.</li>
+                <li>Designed Bloomberg Law's first AI legal assistant chat (Bloomberg Law Answers / AI Quick Answers), building every component from scratch for cost-effective implementation.</li>
+                <li>Led the ground-up redesign of Bloomberg Law's design system and its phased rollout plan, improving cross-platform consistency and efficiency.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="font-headline text-xl font-bold">Consultant — UX Designer &amp; Front-End Developer</h3>
+                <span class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant">Aug 2020 – Dec 2022</span>
+              </div>
+              <div class="mb-4 text-sm font-semibold text-primary">Deloitte, Remote</div>
+              <ul class="list-disc space-y-2 pl-4 text-sm leading-relaxed text-on-surface-variant marker:text-primary">
+                <li><strong class="text-on-surface">Amazon (AWS)</strong> — led UX design and research for a solution deployed in 175+ fulfillment centers worldwide; 40+ hours of global user research; high-fidelity wireframes for React Web and React Native; mobile UI built in Flutter.</li>
+                <li><strong class="text-on-surface">U.S. Department of State</strong> — spearheaded UX for a $35M modernization initiative; ran interviews, usability tests, and card sorting; led 10 UAT sessions with 60+ testers ahead of Release 1.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="font-headline text-xl font-bold">UX Designer — Contractor</h3>
+                <span class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant">June 2019 – March 2020</span>
+              </div>
+              <div class="mb-4 text-sm font-semibold text-primary">Michigan Health Specialists, Flint, MI</div>
+              <ul class="list-disc space-y-2 pl-4 text-sm leading-relaxed text-on-surface-variant marker:text-primary">
+                <li>Developed brand identity guidelines in Adobe tools and conducted UX research (employee interviews, patient surveys, usability tests) to optimize the website experience.</li>
+                <li>Redesigned the company website end to end: wireframes/mockups in Adobe XD, then a WordPress build in HTML, CSS, JavaScript, and PHP with Advanced Custom Fields (ACF) so non-developers could update content.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="font-headline text-xl font-bold">Front-End &amp; User Experience Developer</h3>
+                <span class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant">July 2016 – Aug 2018</span>
+              </div>
+              <div class="mb-4 text-sm font-semibold text-primary">GRID — Design &amp; Technology, Troy, MI</div>
+              <ul class="list-disc space-y-2 pl-4 text-sm leading-relaxed text-on-surface-variant marker:text-primary">
+                <li>Partnered with project managers on design and development for client projects, contributing to the launch of 4+ applications and leading front-end development for an FCA subsidiary web application.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI R&D PROJECTS -->
+      <section id="projects" class="border-t border-border bg-surface px-4 py-20 sm:px-6 sm:py-24 lg:px-10">
+        <div class="mx-auto max-w-[1440px]">
+          <div class="section-eyebrow mb-6"><span>#3</span> AI R&amp;D Projects</div>
+          <h2 class="mb-4 font-headline text-3xl font-extrabold tracking-tight sm:text-4xl">Personal builds, AI-accelerated.</h2>
+          <p class="mb-16 max-w-2xl text-sm leading-relaxed text-on-surface-variant">
+            Where I test AI-accelerated development workflows before applying them to enterprise work. Enterprise roles provide the discipline and scale; these provide the speed.
+          </p>
+
+          <!-- GarKar -->
+          <div class="mb-16 border border-border bg-background">
+            <div class="grid gap-8 p-8 sm:p-10 lg:grid-cols-2 lg:p-12">
+              <div class="space-y-6">
+                <div class="flex items-center gap-4">
+                  <img src="media/GarKar-Dark.png" alt="GarKar logo" class="h-8 w-auto" />
+                  <span class="chip">Vehicle Marketplace</span>
+                </div>
+                <p class="text-sm leading-relaxed text-on-surface-variant">
+                  Built GarKar, a marketplace connecting vehicle buyers and sellers, from concept to working MVP: listings, search and filtering, in-app messaging, image uploads, and account management. Developed the full stack solo with Next.js, React, Node.js, Express, and MongoDB, implementing REST APIs, JWT authentication, and scalable data models. Used Claude Code throughout the build for architecture, implementation, debugging, and refactoring, and Google Stitch to generate and iterate on UI layouts quickly.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="chip">Next.js</span>
+                  <span class="chip">React</span>
+                  <span class="chip">Node.js</span>
+                  <span class="chip">Express</span>
+                  <span class="chip">MongoDB</span>
+                  <span class="chip">JWT</span>
+                </div>
+                <div class="flex flex-wrap gap-6 pt-2 text-xs font-bold uppercase tracking-widest">
+                  <a href="media/GARKAR_FINAL_PD.pdf" target="_blank" class="flex items-center gap-2 text-primary hover:text-white">
+                    Pitch Deck (PDF) <span class="material-symbols-outlined text-sm">arrow_outward</span>
+                  </a>
+                </div>
+              </div>
+              <div>
+                <div class="relative overflow-hidden border border-border">
+                  <div class="slideshow-track" id="garkar-track">
+                    <img src="media/garkar1.PNG" alt="GarKar screenshot 1" class="slide-image" />
+                    <img src="media/garkar2.PNG" alt="GarKar screenshot 2" class="slide-image" />
+                    <img src="media/garkar3.PNG" alt="GarKar screenshot 3" class="slide-image" />
+                    <img src="media/garkar4.PNG" alt="GarKar screenshot 4" class="slide-image" />
+                    <img src="media/garkar5.PNG" alt="GarKar screenshot 5" class="slide-image" />
+                    <img src="media/garkar6.PNG" alt="GarKar screenshot 6" class="slide-image" />
+                    <img src="media/garkar7.PNG" alt="GarKar screenshot 7" class="slide-image" />
+                    <img src="media/garkar8.PNG" alt="GarKar screenshot 8" class="slide-image" />
+                    <img src="media/garkar9.PNG" alt="GarKar screenshot 9" class="slide-image" />
+                    <img src="media/garkar10.PNG" alt="GarKar screenshot 10" class="slide-image" />
+                    <img src="media/garkar11.PNG" alt="GarKar screenshot 11" class="slide-image" />
+                    <img src="media/garkar12.PNG" alt="GarKar screenshot 12" class="slide-image" />
+                    <img src="media/garkar13.PNG" alt="GarKar screenshot 13" class="slide-image" />
+                    <img src="media/garkar14.PNG" alt="GarKar screenshot 14" class="slide-image" />
+                    <img src="media/garkar15.PNG" alt="GarKar screenshot 15" class="slide-image" />
+                    <img src="media/garkar16.PNG" alt="GarKar screenshot 16" class="slide-image" />
+                    <img src="media/garkar17.PNG" alt="GarKar screenshot 17" class="slide-image" />
+                    <img src="media/garkar18.PNG" alt="GarKar screenshot 18" class="slide-image" />
+                  </div>
+                  <button id="garkar-prev" class="absolute left-2 top-1/2 -translate-y-1/2 bg-background/70 px-3 py-2 text-lg hover:text-primary" aria-label="Previous screenshot">&#8249;</button>
+                  <button id="garkar-next" class="absolute right-2 top-1/2 -translate-y-1/2 bg-background/70 px-3 py-2 text-lg hover:text-primary" aria-label="Next screenshot">&#8250;</button>
+                </div>
+                <div class="mt-3 flex justify-center gap-2" id="garkar-dots"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Zaytoon -->
+          <div class="border border-dashed border-border bg-background">
+            <div class="grid gap-8 p-8 sm:p-10 lg:grid-cols-2 lg:p-12">
+              <div class="space-y-6">
+                <div class="flex items-center gap-4">
+                  <span class="font-headline text-2xl font-extrabold">Zaytoon</span>
+                  <span class="chip border-primary text-primary">In Development</span>
+                </div>
+                <p class="text-sm leading-relaxed text-on-surface-variant">
+                  Building Zaytoon, an iOS fintech app that rounds up everyday purchases into automated charitable giving, applying the Acorns micro-investing model to recurring donations. Architecting and developing the full stack solo: a React Native (Expo) iOS client, Node.js backend, MongoDB data layer, Plaid integration for transaction data, and Stripe for payment processing. Running the build through a structured, AI-accelerated SDLC — PRD creation, system architecture, epic/story breakdown, sprint planning, and story-by-story implementation with automated code review. Responsible for product strategy, UX, branding, mobile architecture, backend, and payments integration.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="chip">React Native (Expo)</span>
+                  <span class="chip">Node.js</span>
+                  <span class="chip">MongoDB</span>
+                  <span class="chip">Plaid</span>
+                  <span class="chip">Stripe</span>
+                </div>
+              </div>
+              <div class="flex min-h-[220px] flex-col items-center justify-center gap-3 border border-border bg-surface-alt text-center">
+                <span class="material-symbols-outlined text-4xl text-on-surface-variant">savings</span>
+                <p class="max-w-xs text-xs font-semibold uppercase tracking-widest text-on-surface-variant">Screens and brand assets landing soon</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CASE STUDIES -->
+      <section id="case-studies" class="px-4 py-20 sm:px-6 sm:py-24 lg:px-10">
+        <div class="mx-auto max-w-[1440px]">
+          <div class="section-eyebrow mb-6"><span>#4</span> Case Studies</div>
+          <h2 class="mb-16 font-headline text-3xl font-extrabold tracking-tight sm:text-4xl">Selected work.</h2>
+
+          <!-- Bloomberg Law, full width -->
+          <div class="mb-8 border border-border bg-surface p-8 sm:p-10 lg:p-12">
+            <h3 class="mb-3 font-headline text-2xl font-bold">Bloomberg Law — Innovation Studio</h3>
+            <p class="mb-8 max-w-3xl text-sm leading-relaxed text-on-surface-variant">
+              Built Bloomberg Law's Innovation Studio from scratch as the hub for launching generative AI tools, then designed its first AI legal assistant chat — created every component from scratch and streamlined them for cost-effective implementation.
+            </p>
+            <div class="grid gap-8 md:grid-cols-2">
+              <div>
+                <div class="mb-3 text-xs font-bold uppercase tracking-widest text-primary">AI Legal Chat</div>
+                <video controls class="w-full border border-border">
+                  <source src="media/LinkedInVideo-BLAW-CHAT.mp4" type="video/mp4" />
+                </video>
+                <a href="https://www.linkedin.com/posts/bloomberg-law_the-next-generation-of-ai-tools-for-legal-activity-7285370172024995840-qmig/?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary">
+                  LinkedIn Post <span class="material-symbols-outlined text-sm">arrow_outward</span>
+                </a>
+              </div>
+              <div>
+                <div class="mb-3 text-xs font-bold uppercase tracking-widest text-primary">AI Quick Answers</div>
+                <video controls class="w-full border border-border">
+                  <source src="media/LinkedInVideo-BLAW-ANSWERS.mp4" type="video/mp4" />
+                </video>
+                <a href="https://www.linkedin.com/posts/anas-morsi_now-available-to-bloomberg-law-innovation-activity-7219866310254436352-XLNy?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-on-surface-variant hover:text-primary">
+                  LinkedIn Post <span class="material-symbols-outlined text-sm">arrow_outward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid of smaller case studies -->
+          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="border border-border bg-surface p-8">
+              <h3 class="mb-3 font-headline text-lg font-bold">Instagram — Reel Queue</h3>
+              <p class="mb-6 text-sm leading-relaxed text-on-surface-variant">Designed a feature to queue reels sent by friends, incorporating NLP-based conversation detection to improve user interactions.</p>
+              <a href="instagram.html" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-white">View Case Study <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+            </div>
+            <div class="border border-border bg-surface p-8">
+              <h3 class="mb-3 font-headline text-lg font-bold">Amazon — Safety Reporting</h3>
+              <p class="mb-6 text-sm leading-relaxed text-on-surface-variant">Redesigned a paper-based safety reporting process into a digital tool for Amazon fulfillment centers, improving reporting accuracy from 51% to 93%.</p>
+              <a href="media/Anas_Amazon_Final_am.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-white">View Case Study (PDF) <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+            </div>
+            <div class="border border-border bg-surface p-8">
+              <h3 class="mb-3 font-headline text-lg font-bold">Michigan Health Specialists</h3>
+              <p class="mb-6 text-sm leading-relaxed text-on-surface-variant">Developed a full brand identity system — color palette, typography, and logo guidelines — for consistent application across digital and print.</p>
+              <a href="media/MHS_Final_Brand-Guideline.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-white">View Brand Guide (PDF) <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+            </div>
+            <div class="border border-border bg-surface p-8">
+              <h3 class="mb-3 font-headline text-lg font-bold">ZoomScript</h3>
+              <p class="mb-6 text-sm leading-relaxed text-on-surface-variant">Designed a prescription-refill mobile experience after research found 86% of patients found traditional refill methods cumbersome and slow.</p>
+              <a href="media/zc.pdf" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-white">View Case Study (PDF) <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+            </div>
+            <div class="border border-border bg-surface p-8">
+              <h3 class="mb-3 font-headline text-lg font-bold">FCA Witech</h3>
+              <p class="mb-6 text-sm leading-relaxed text-on-surface-variant">Led front-end development for an FCA subsidiary web application, implementing interactive, accessible components in close partnership with the UX team.</p>
+              <a href="https://www.fcawitech.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary hover:text-white">Visit Site <span class="material-symbols-outlined text-sm">arrow_outward</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" class="border-t border-border bg-surface px-4 py-20 sm:px-6 sm:py-24 lg:px-10">
+        <div class="mx-auto max-w-[1440px]">
+          <div class="section-eyebrow mb-6"><span>#5</span> Education</div>
+          <h2 class="mb-16 font-headline text-3xl font-extrabold tracking-tight sm:text-4xl">Education.</h2>
+          <div class="grid gap-8 sm:grid-cols-2">
+            <div class="border border-border bg-background p-8">
+              <div class="mb-2 text-xs font-bold uppercase tracking-widest text-primary">BS, Information — User Experience Design</div>
+              <div class="font-headline text-lg font-bold">University of Michigan</div>
+              <div class="text-sm text-on-surface-variant">Ann Arbor, MI</div>
+            </div>
+            <div class="border border-border bg-background p-8">
+              <div class="mb-2 text-xs font-bold uppercase tracking-widest text-primary">BS, Computer Science</div>
+              <div class="font-headline text-lg font-bold">Kettering University</div>
+              <div class="text-sm text-on-surface-variant">Flint, MI</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="px-4 py-20 sm:px-6 sm:py-24 lg:px-10">
+        <div class="mx-auto max-w-[1440px] border border-border">
+          <div class="flex flex-col lg:flex-row">
+            <div class="flex flex-col justify-between bg-surface-alt p-8 sm:p-12 lg:w-2/5 lg:p-16">
+              <div>
+                <h2 class="mb-8 font-headline text-4xl font-extrabold uppercase leading-none tracking-tighter sm:text-5xl">Let's<br />Talk<span class="text-primary">.</span></h2>
+                <p class="mb-12 text-lg font-light text-on-surface-variant">
+                  Open to Lead / Principal UX and AI-native product roles. Reach out directly or send a note below.
+                </p>
+              </div>
+              <div class="space-y-6">
+                <a href="mailto:contact@anasmorsi.com" class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest hover:text-primary"><span class="text-primary">E:</span> contact@anasmorsi.com</a>
+                <a href="tel:+18102825910" class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest hover:text-primary"><span class="text-primary">P:</span> (810) 282-5910</a>
+                <a href="https://www.linkedin.com/in/anas-morsi/" target="_blank" rel="noopener" class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest hover:text-primary"><span class="text-primary">L:</span> linkedin.com/in/anas-morsi</a>
+              </div>
+            </div>
+            <div class="p-8 sm:p-12 lg:w-3/5 lg:p-16">
+              <form id="contact-form" class="space-y-10">
+                <div class="grid gap-10 md:grid-cols-2">
+                  <div class="border-b-2 border-border transition-colors focus-within:border-primary">
+                    <label class="mb-2 block text-[10px] font-black uppercase tracking-[0.3em]">Name</label>
+                    <input class="w-full border-none bg-transparent px-0 py-2 font-medium text-on-surface focus:ring-0" name="name" placeholder="REQUIRED" type="text" required />
+                  </div>
+                  <div class="border-b-2 border-border transition-colors focus-within:border-primary">
+                    <label class="mb-2 block text-[10px] font-black uppercase tracking-[0.3em]">Email</label>
+                    <input class="w-full border-none bg-transparent px-0 py-2 font-medium text-on-surface focus:ring-0" name="email" placeholder="REQUIRED" type="email" required />
+                  </div>
+                </div>
+                <div class="border-b-2 border-border transition-colors focus-within:border-primary">
+                  <label class="mb-2 block text-[10px] font-black uppercase tracking-[0.3em]">Message</label>
+                  <textarea class="w-full resize-none border-none bg-transparent px-0 py-2 font-medium text-on-surface focus:ring-0" name="message" placeholder="WHAT'S THE ROLE / OPPORTUNITY?" rows="3" required></textarea>
+                </div>
+                <button class="w-full bg-primary py-6 text-xs font-black uppercase tracking-[0.4em] text-background transition-all hover:bg-white" type="submit">
+                  Send Message
+                </button>
+                <p id="contact-status" class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-border bg-surface px-4 py-12 sm:px-6 lg:px-10">
+      <div class="mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-4 sm:flex-row">
+        <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">© 2026 Anas Morsi. All Rights Reserved.</p>
+        <a href="windows95.html" class="text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant transition-colors hover:text-primary">
+          ▸ Enter 1995 Mode
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu
+      const menuTrigger = document.getElementById("menu-trigger");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuTrigger?.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
+      });
+
+      // GarKar slideshow
+      (function () {
+        const track = document.getElementById("garkar-track");
+        const dotsContainer = document.getElementById("garkar-dots");
+        const slides = track.querySelectorAll("img");
+        let current = 0;
+
+        slides.forEach((_, i) => {
+          const dot = document.createElement("span");
+          dot.classList.add("dot");
+          if (i === 0) dot.classList.add("active");
+          dot.addEventListener("click", () => goTo(i));
+          dotsContainer.appendChild(dot);
+        });
+
+        function goTo(index) {
+          current = (index + slides.length) % slides.length;
+          track.style.transform = `translateX(-${current * 100}%)`;
+          dotsContainer.querySelectorAll(".dot").forEach((dot, i) => dot.classList.toggle("active", i === current));
+        }
+
+        document.getElementById("garkar-prev").addEventListener("click", () => goTo(current - 1));
+        document.getElementById("garkar-next").addEventListener("click", () => goTo(current + 1));
+      })();
+
+      // Contact form via formsubmit.co
+      (function () {
+        const CONTACT_ENDPOINT = "https://formsubmit.co/ajax/contact@anasmorsi.com";
+        const form = document.getElementById("contact-form");
+        const status = document.getElementById("contact-status");
+
+        form?.addEventListener("submit", function (event) {
+          event.preventDefault();
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+
+          const name = form.elements.namedItem("name")?.value?.trim() || "";
+          const email = form.elements.namedItem("email")?.value?.trim() || "";
+          const message = form.elements.namedItem("message")?.value?.trim() || "";
+          const submitButton = form.querySelector('button[type="submit"]');
+          const originalLabel = submitButton?.textContent;
+
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+          }
+          status.textContent = "";
+
+          const payload = new FormData();
+          payload.append("name", name);
+          payload.append("email", email);
+          payload.append("message", message);
+          payload.append("_subject", `New portfolio inquiry from ${name || "Website Visitor"}`);
+          payload.append("_captcha", "false");
+          payload.append("_template", "table");
+
+          fetch(CONTACT_ENDPOINT, {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: payload,
+          })
+            .then((response) => {
+              if (!response.ok) throw new Error("Request failed");
+              status.textContent = "Message sent — thanks for reaching out.";
+              form.reset();
+            })
+            .catch(() => {
+              status.textContent = "Something went wrong. Please email contact@anasmorsi.com directly.";
+            })
+            .finally(() => {
+              if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = originalLabel;
+              }
+            });
+        });
+      })();
+    </script>
   </body>
 </html>
